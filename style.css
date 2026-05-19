@@ -163,46 +163,53 @@ img {
 /* ==========================================
    HEADER & NAVIGATION
    ========================================== */
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
 .main-header {
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
+    background-color: #ffffff; /* Solid clean white background like Uptodown */
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border-color);
+    width: 100%;
 }
 
 .header-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Pushes the hamburger and logo together to the left */
     align-items: center;
-    height: 75px;
+    gap: 12px; /* Uniform space between hamburger and logo */
+    height: 65px; /* Clean, slightly slimmer height profile */
+    padding: 0 1.5rem;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
 }
 
 .logo a {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--bg-dark);
     letter-spacing: -0.5px;
-}
-
-.logo span {
-    color: var(--primary);
-}
-
-.main-nav ul {
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    text-decoration: none;
 }
 
-.nav-link {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-main);
+/* Ensure your customized span looks sharp inside the white header */
+.logo span {
+    color: #00bcd4; /* Accent color matching your sidebar icons */
 }
 
-.nav-link:hover, .nav-link.active {
-    color: var(--primary);
+/* Keeps your existing mobile hide instruction safe */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; 
+    }
 }
 
 /* ==========================================
