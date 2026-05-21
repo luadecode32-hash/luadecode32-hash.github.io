@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexCore | Advanced Utility Suite</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Hamburger Toggle -->
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                <span>HEX<span class="accent">CORE</span></span>
+            </div>
+            <p class="tagline">Advanced Utility Suite</p>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a href="#home" class="active" data-section="home"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+            <li><a href="#hacking" data-section="hacking"><i class="fas fa-terminal"></i> <span>Hacking Lab</span></a></li>
+            <li><a href="#lua" data-section="lua"><i class="fas fa-code"></i> <span>Lua Engine</span></a></li>
+            <li><a href="#college" data-section="college"><i class="fas fa-graduation-cap"></i> <span>College Predictor</span></a></li>
+            <li><a href="#tools" data-section="tools"><i class="fas fa-toolbox"></i> <span>System Tools</span></a></li>
+            <li><a href="#memory" data-section="memory"><i class="fas fa-memory"></i> <span>Memory Scanner</span></a></li>
+            <li><a href="#scripts" data-section="scripts"><i class="fas fa-scroll"></i> <span>Script Hub</span></a></li>
+            <li><a href="#settings" data-section="settings"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+        </ul>
+
+        <div class="sidebar-footer">
+            <div class="status-indicator">
+                <span class="status-dot online"></span>
+                <span class="status-text">System Online</span>
+            </div>
+            <div class="version">v2.4.0 Beta</div>
+        </div>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        
+        <!-- Home / Dashboard -->
+        <section id="home" class="section active">
+            <div class="section-header">
+                <h1><i class="fas fa-layer-group"></i> Dashboard</h1>
+                <p class="breadcrumb">Overview / System Status</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <div class="card welcome-card">
+                    <div class="card-glow"></div>
+                    <h2>Welcome to <span class="accent">HexCore</span></h2>
+                    <p>Select a module from the sidebar to begin. All tools are sandboxed and run locally in your browser.</p>
+                    <div class="quick-actions">
+                        <button class="btn btn-primary" onclick="navigateTo('lua')"><i class="fas fa-play"></i> Launch Lua Engine</button>
+                        <button class="btn btn-secondary" onclick="navigateTo('hacking')"><i class="fas fa-bug"></i> Open Hacking Lab</button>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon"><i class="fas fa-microchip"></i></div>
+                    <div class="stat-info">
+                        <h3>CPU Load</h3>
+                        <div class="stat-value" id="cpuValue">12%</div>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 12%"></div></div>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon"><i class="fas fa-network-wired"></i></div>
+                    <div class="stat-info">
+                        <h3>Network</h3>
+                        <div class="stat-value" id="netValue">Active</div>
+                        <div class="progress-bar"><div class="progress-fill success" style="width: 100%"></div></div>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="stat-info">
+                        <h3>Security</h3>
+                        <div class="stat-value">Secure</div>
+                        <div class="progress-bar"><div class="progress-fill success" style="width: 100%"></div></div>
+                    </div>
+                </div>
+
+                <div class="card terminal-card">
+                    <div class="terminal-header">
+                        <span class="terminal-title"><i class="fas fa-terminal"></i> System Log</span>
+                        <span class="terminal-controls">
+                            <span></span><span></span><span></span>
+                        </span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <div class="log-entry"><span class="timestamp">[08:26:01]</span> <span class="log-info">INFO</span> HexCore initialized successfully</div>
+                        <div class="log-entry"><span class="timestamp">[08:26:02]</span> <span class="log-success">OK</span> Lua engine module loaded</div>
+                        <div class="log-entry"><span class="timestamp">[08:26:02]</span> <span class="log-success">OK</span> Memory scanner module loaded</div>
+                        <div class="log-entry"><span class="timestamp">[08:26:03]</span> <span class="log-warn">WARN</span> Sandbox mode enabled - no root access</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hacking Lab -->
+        <section id="hacking" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-terminal"></i> Hacking Lab</h1>
+                <p class="breadcrumb">Tools / Penetration Testing</p>
+            </div>
+
+            <div class="content-grid two-col">
+                <div class="card tool-card">
+                    <h3><i class="fas fa-fingerprint"></i> Hash Analyzer</h3>
+                    <p>Identify and analyze hash types (MD5, SHA1, SHA256, etc.)</p>
+                    <div class="input-group">
+                        <input type="text" id="hashInput" placeholder="Enter hash string...">
+                        <button class="btn btn-primary" onclick="analyzeHash()"><i class="fas fa-search"></i> Analyze</button>
+                    </div>
+                    <div class="result-box" id="hashResult"></div>
+                </div>
+
+                <div class="card tool-card">
+                    <h3><i class="fas fa-lock"></i> Password Strength</h3>
+                    <p>Evaluate password entropy and crack time estimates.</p>
+                    <div class="input-group">
+                        <input type="text" id="passInput" placeholder="Enter password..." oninput="checkPassword(this.value)">
+                    </div>
+                    <div class="strength-meter" id="strengthMeter">
+                        <div class="strength-bar"></div>
+                    </div>
+                    <div class="strength-text" id="strengthText">Enter a password</div>
+                </div>
+
+                <div class="card tool-card wide">
+                    <h3><i class="fas fa-globe"></i> Port Scanner (Simulated)</h3>
+                    <p>Simulated network port analysis for educational purposes.</p>
+                    <div class="input-group">
+                        <input type="text" id="portTarget" placeholder="Target IP (e.g., 192.168.1.1)">
+                        <button class="btn btn-primary" onclick="scanPorts()"><i class="fas fa-radar"></i> Scan</button>
+                    </div>
+                    <div class="port-results" id="portResults"></div>
+                </div>
+
+                <div class="card tool-card">
+                    <h3><i class="fas fa-key"></i> Base64 / Hex</h3>
+                    <p>Encode and decode Base64 and Hexadecimal strings.</p>
+                    <div class="input-group vertical">
+                        <textarea id="codecInput" rows="3" placeholder="Input text..."></textarea>
+                        <div class="button-row">
+                            <button class="btn btn-secondary" onclick="toBase64()">To Base64</button>
+                            <button class="btn btn-secondary" onclick="fromBase64()">From Base64</button>
+                            <button class="btn btn-secondary" onclick="toHex()">To Hex</button>
+                            <button class="btn btn-secondary" onclick="fromHex()">From Hex</button>
+                        </div>
+                        <textarea id="codecOutput" rows="3" placeholder="Output..." readonly></textarea>
+                    </div>
+                </div>
+
+                <div class="card tool-card">
+                    <h3><i class="fas fa-qrcode"></i> Generator</h3>
+                    <p>Generate UUIDs, random strings, and secure tokens.</p>
+                    <div class="generator-grid">
+                        <button class="btn btn-secondary" onclick="genUUID()">Generate UUID</button>
+                        <button class="btn btn-secondary" onclick="genToken()">Secure Token</button>
+                        <button class="btn btn-secondary" onclick="genHex()">Random Hex</button>
+                    </div>
+                    <div class="result-box mono" id="genResult"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lua Engine -->
+        <section id="lua" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-code"></i> Lua Engine</h1>
+                <p class="breadcrumb">Scripting / Execution Environment</p>
+            </div>
+
+            <div class="lua-container">
+                <div class="card editor-card">
+                    <div class="editor-toolbar">
+                        <span class="toolbar-title"><i class="fas fa-file-code"></i> script.lua</span>
+                        <div class="toolbar-actions">
+                            <button class="btn btn-small" onclick="loadExample()"><i class="fas fa-book"></i> Example</button>
+                            <button class="btn btn-small" onclick="clearEditor()"><i class="fas fa-trash"></i> Clear</button>
+                            <button class="btn btn-primary btn-small" onclick="runLua()"><i class="fas fa-play"></i> Execute</button>
+                        </div>
+                    </div>
+                    <div class="editor-wrapper">
+                        <div class="line-numbers" id="lineNumbers">1</div>
+                        <textarea id="luaEditor" class="code-editor" spellcheck="false" placeholder="-- Enter Lua code here...">-- Welcome to HexCore Lua Engine
+-- This is a simulated environment for educational use
+
+function calculate(a, b, op)
+    if op == "+" then return a + b
+    elseif op == "-" then return a - b
+    elseif op == "*" then return a * b
+    elseif op == "/" then return b ~= 0 and a / b or "Error"
+    else return "Unknown operator"
+    end
+end
+
+print("HexCore Lua v1.0")
+print("Result: " .. calculate(10, 5, "+"))</textarea>
+                    </div>
+                </div>
+
+                <div class="card output-card">
+                    <div class="output-header">
+                        <span><i class="fas fa-desktop"></i> Console Output</span>
+                        <button class="btn btn-small btn-secondary" onclick="clearConsole()"><i class="fas fa-eraser"></i> Clear</button>
+                    </div>
+                    <div class="console-output" id="luaConsole">
+                        <div class="console-line system">HexCore Lua Engine v1.0 ready...</div>
+                        <div class="console-line system">Type 'help()' for available commands.</div>
+                    </div>
+                </div>
+
+                <div class="card snippets-card">
+                    <h3><i class="fas fa-bookmark"></i> Quick Snippets</h3>
+                    <div class="snippets-grid">
+                        <button class="snippet-btn" onclick="insertSnippet('loop')">For Loop</button>
+                        <button class="snippet-btn" onclick="insertSnippet('function')">Function</button>
+                        <button class="snippet-btn" onclick="insertSnippet('table')">Table</button>
+                        <button class="snippet-btn" onclick="insertSnippet('if')">If/Else</button>
+                        <button class="snippet-btn" onclick="insertSnippet('string')">String Ops</button>
+                        <button class="snippet-btn" onclick="insertSnippet('math')">Math Lib</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- College Predictor -->
+        <section id="college" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-graduation-cap"></i> College Predictor</h1>
+                <p class="breadcrumb">Education / Admission Forecast</p>
+            </div>
+
+            <div class="content-grid two-col">
+                <div class="card predictor-form">
+                    <h3><i class="fas fa-sliders-h"></i> Input Parameters</h3>
+                    
+                    <div class="form-group">
+                        <label>Exam Type</label>
+                        <select id="examType" class="form-select">
+                            <option value="jee">JEE Main / Advanced</option>
+                            <option value="sat">SAT</option>
+                            <option value="act">ACT</option>
+                            <option value="custom">Custom Entrance</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Rank / Score</label>
+                        <input type="number" id="examScore" placeholder="e.g., 15000" class="form-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="category" class="form-select">
+                            <option value="general">General</option>
+                            <option value="obc">OBC</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="ews">EWS</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Branch</label>
+                        <select id="branch" class="form-select">
+                            <option value="cse">Computer Science</option>
+                            <option value="ece">Electronics & Comm</option>
+                            <option value="mech">Mechanical</option>
+                            <option value="civil">Civil</option>
+                            <option value="it">Information Tech</option>
+                            <option value="any">Any Branch</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Home State</label>
+                        <input type="text" id="homeState" placeholder="e.g., Maharashtra" class="form-input">
+                    </div>
+
+                    <button class="btn btn-primary btn-full" onclick="predictCollege()">
+                        <i class="fas fa-magic"></i> Predict Colleges
+                    </button>
+                </div>
+
+                <div class="card results-card">
+                    <h3><i class="fas fa-chart-pie"></i> Prediction Results</h3>
+                    <div class="prediction-display" id="predictionDisplay">
+                        <div class="empty-state">
+                            <i class="fas fa-search"></i>
+                            <p>Enter your details and click predict to see results</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prediction-stats" id="predictionStats" style="display:none;">
+                        <div class="stat-row">
+                            <span>Probability</span>
+                            <div class="prob-bar"><div class="prob-fill" id="probFill"></div></div>
+                            <span id="probText">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card college-list-card wide">
+                    <h3><i class="fas fa-university"></i> Top Matches</h3>
+                    <div class="college-list" id="collegeList">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Tools -->
+        <section id="tools" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-toolbox"></i> System Tools</h1>
+                <p class="breadcrumb">Utilities / System Diagnostics</p>
+            </div>
+            <div class="content-grid three-col">
+                <div class="card tool-icon-card" onclick="openTool('calc')">
+                    <i class="fas fa-calculator"></i>
+                    <h4>Calculator</h4>
+                    <p>Scientific calculator</p>
+                </div>
+                <div class="card tool-icon-card" onclick="openTool('converter')">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h4>Unit Converter</h4>
+                    <p>Length, weight, temp</p>
+                </div>
+                <div class="card tool-icon-card" onclick="openTool('json')">
+                    <i class="fas fa-brackets-curly"></i>
+                    <h4>JSON Formatter</h4>
+                    <p>Validate & format</p>
+                </div>
+                <div class="card tool-icon-card" onclick="openTool('color')">
+                    <i class="fas fa-palette"></i>
+                    <h4>Color Picker</h4>
+                    <p>HEX, RGB, HSL</p>
+                </div>
+                <div class="card tool-icon-card" onclick="openTool('regex')">
+                    <i class="fas fa-spell-check"></i>
+                    <h4>Regex Tester</h4>
+                    <p>Pattern matching</p>
+                </div>
+                <div class="card tool-icon-card" onclick="openTool('diff')">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Text Diff</h4>
+                    <p>Compare texts</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memory Scanner -->
+        <section id="memory" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-memory"></i> Memory Scanner</h1>
+                <p class="breadcrumb">Analysis / Memory Simulation</p>
+            </div>
+            <div class="card wide-card">
+                <div class="memory-controls">
+                    <div class="input-group">
+                        <input type="text" id="memSearch" placeholder="Search value (hex or decimal)...">
+                        <select id="memType">
+                            <option value="4byte">4 Byte</option>
+                            <option value="8byte">8 Byte</option>
+                            <option value="float">Float</option>
+                            <option value="double">Double</option>
+                            <option value="string">String</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="searchMemory()"><i class="fas fa-search"></i> First Scan</button>
+                        <button class="btn btn-secondary" onclick="nextScan()"><i class="fas fa-filter"></i> Next Scan</button>
+                        <button class="btn btn-secondary" onclick="resetScan()"><i class="fas fa-undo"></i> Reset</button>
+                    </div>
+                </div>
+                <div class="memory-table-wrapper">
+                    <table class="memory-table" id="memoryTable">
+                        <thead>
+                            <tr>
+                                <th>Address</th>
+                                <th>Type</th>
+                                <th>Value</th>
+                                <th>Previous</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="memTableBody">
+                            <!-- JS populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script Hub -->
+        <section id="scripts" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-scroll"></i> Script Hub</h1>
+                <p class="breadcrumb">Repository / Community Scripts</p>
+            </div>
+            <div class="script-grid" id="scriptGrid">
+                <!-- JS populated -->
+            </div>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="section">
+            <div class="section-header">
+                <h1><i class="fas fa-cog"></i> Settings</h1>
+                <p class="breadcrumb">Configuration / Preferences</p>
+            </div>
+            <div class="content-grid two-col">
+                <div class="card settings-card">
+                    <h3><i class="fas fa-paint-brush"></i> Appearance</h3>
+                    <div class="setting-item">
+                        <span>Particle Effects</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="particlesToggle" checked onchange="toggleParticles()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Animations</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="animToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Compact Mode</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="compactToggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="card settings-card">
+                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
+                    <div class="setting-item">
+                        <span>Sanitize Output</span>
+                        <label class="toggle">
+                            <input type="checkbox" checked disabled>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <span>Log Actions</span>
+                        <label class="toggle">
+                            <input type="checkbox" id="logToggle" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="xyz.js"></script>
+</body>
+</html>
