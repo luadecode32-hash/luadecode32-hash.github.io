@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Resources</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-chart-pie"></i>
+                <h2>NexusAnalytics</h2>
+            </div>
+            <nav class="sidebar-menu">
+                <a href="#" class="menu-item active"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-users"></i> Customers</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-wallet"></i> Revenue Overview</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-bars-progress"></i> Active Tasks</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Preferences</a>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="btn-theme">
+                    <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search analytics or documents...">
+                </div>
+                <div class="header-profile">
+                    <i class="fa-solid fa-bell notification-icon"></i>
+                    <div class="profile-info">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="avatar">
+                        <div>
+                            <h4>Alex Morgan</h4>
+                            <p>Global Administrator</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-body">
+                <div class="welcome-banner">
+                    <h1>Welcome Back, Alex!</h1>
+                    <p>Monitor operations, operational efficiency metrics, and target deadlines.</p>
+                </div>
+
+                <section class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon blue"><i class="fa-solid fa-eye"></i></div>
+                        <div class="metric-data">
+                            <h3>142,384</h3>
+                            <p>Total Conversions</p>
+                            <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +12.4%</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon green"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <div class="metric-data">
+                            <h3>$24,510</h3>
+                            <p>Net Earnings</p>
+                            <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +8.2%</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon purple"><i class="fa-solid fa-user-plus"></i></div>
+                        <div class="metric-data">
+                            <h3>1,205</h3>
+                            <p>Active Workspaces</p>
+                            <span class="trend negative"><i class="fa-solid fa-arrow-down"></i> -2.1%</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="data-section">
+                    <div class="section-header">
+                        <h2>Operational Workflows</h2>
+                        <button id="open-modal-btn" class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Deployment</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Deployment Matrix</th>
+                                    <th>Lead Consultant</th>
+                                    <th>Current Status</th>
+                                    <th>Allocated Assets</th>
+                                    <th>Action Interface</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <tr>
+                                    <td><strong>Alpha Edge Edge Computing</strong></td>
+                                    <td>Jane Doe</td>
+                                    <td><span class="status-badge progress">In Progress</span></td>
+                                    <td>$14,200</td>
+                                    <td><button class="btn-icon delete-row-btn"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Quantum Data Architecture</strong></td>
+                                    <td>Marcus Vance</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td>$45,000</td>
+                                    <td><button class="btn-icon delete-row-btn"><i class="fa-solid fa-trash"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div id="crud-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Log Operational Parameters</h3>
+                <button id="close-modal-btn" class="modal-close-x">&times;</button>
+            </div>
+            <form id="modal-form">
+                <div class="form-group">
+                    <label for="proj-name">Deployment Name</label>
+                    <input type="text" id="proj-name" required placeholder="e.g., Enterprise Pipeline Migration">
+                </div>
+                <div class="form-group">
+                    <label for="proj-lead">Lead Consultant</label>
+                    <input type="text" id="proj-lead" required placeholder="e.g., Sarah Connor">
+                </div>
+                <div class="form-group">
+                    <label for="proj-status">Lifecycle Status</label>
+                    <select id="proj-status">
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Under Review">Under Review</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="proj-budget">Asset Valuation</label>
+                    <input type="text" id="proj-budget" required placeholder="e.g., $18,500">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" id="cancel-modal-btn" class="btn-secondary">Cancel Process</button>
+                    <button type="submit" class="btn-primary">Append Record</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
+
