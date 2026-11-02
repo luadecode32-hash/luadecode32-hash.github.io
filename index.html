@@ -1,159 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Resources</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Dynamics | Next-Gen Web Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Site Verification Tag (Replace content with your GSC code) -->
+  <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE" />
 </head>
 <body>
-    <div class="dashboard-container">
-        <aside class="sidebar">
-            <div class="sidebar-brand">
-                <i class="fa-solid fa-chart-pie"></i>
-                <h2>NexusAnalytics</h2>
-            </div>
-            <nav class="sidebar-menu">
-                <a href="#" class="menu-item active"><i class="fa-solid fa-house"></i> Dashboard</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-users"></i> Customers</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-wallet"></i> Revenue Overview</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-bars-progress"></i> Active Tasks</a>
-                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Preferences</a>
-            </nav>
-            <div class="sidebar-footer">
-                <button id="theme-toggle" class="btn-theme">
-                    <i class="fa-solid fa-moon"></i> <span>Dark Mode</span>
-                </button>
-            </div>
-        </aside>
 
-        <main class="main-content">
-            <header class="top-header">
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search analytics or documents...">
-                </div>
-                <div class="header-profile">
-                    <i class="fa-solid fa-bell notification-icon"></i>
-                    <div class="profile-info">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Avatar" class="avatar">
-                        <div>
-                            <h4>Alex Morgan</h4>
-                            <p>Global Administrator</p>
-                        </div>
-                    </div>
-                </div>
-            </header>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Apex<span>Dynamics</span></a>
+      
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact" class="btn-nav">Get Started</a>
+      </nav>
 
-            <div class="content-body">
-                <div class="welcome-banner">
-                    <h1>Welcome Back, Alex!</h1>
-                    <p>Monitor operations, operational efficiency metrics, and target deadlines.</p>
-                </div>
-
-                <section class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-icon blue"><i class="fa-solid fa-eye"></i></div>
-                        <div class="metric-data">
-                            <h3>142,384</h3>
-                            <p>Total Conversions</p>
-                            <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +12.4%</span>
-                        </div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon green"><i class="fa-solid fa-dollar-sign"></i></div>
-                        <div class="metric-data">
-                            <h3>$24,510</h3>
-                            <p>Net Earnings</p>
-                            <span class="trend positive"><i class="fa-solid fa-arrow-up"></i> +8.2%</span>
-                        </div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon purple"><i class="fa-solid fa-user-plus"></i></div>
-                        <div class="metric-data">
-                            <h3>1,205</h3>
-                            <p>Active Workspaces</p>
-                            <span class="trend negative"><i class="fa-solid fa-arrow-down"></i> -2.1%</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="data-section">
-                    <div class="section-header">
-                        <h2>Operational Workflows</h2>
-                        <button id="open-modal-btn" class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Deployment</button>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Deployment Matrix</th>
-                                    <th>Lead Consultant</th>
-                                    <th>Current Status</th>
-                                    <th>Allocated Assets</th>
-                                    <th>Action Interface</th>
-                                </tr>
-                            </thead>
-                            <tbody id="table-body">
-                                <tr>
-                                    <td><strong>Alpha Edge Edge Computing</strong></td>
-                                    <td>Jane Doe</td>
-                                    <td><span class="status-badge progress">In Progress</span></td>
-                                    <td>$14,200</td>
-                                    <td><button class="btn-icon delete-row-btn"><i class="fa-solid fa-trash"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Quantum Data Architecture</strong></td>
-                                    <td>Marcus Vance</td>
-                                    <td><span class="status-badge completed">Completed</span></td>
-                                    <td>$45,000</td>
-                                    <td><button class="btn-icon delete-row-btn"><i class="fa-solid fa-trash"></i></button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </main>
+      <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <div id="crud-modal" class="modal-overlay">
-        <div class="modal-box">
-            <div class="modal-header">
-                <h3>Log Operational Parameters</h3>
-                <button id="close-modal-btn" class="modal-close-x">&times;</button>
-            </div>
-            <form id="modal-form">
-                <div class="form-group">
-                    <label for="proj-name">Deployment Name</label>
-                    <input type="text" id="proj-name" required placeholder="e.g., Enterprise Pipeline Migration">
-                </div>
-                <div class="form-group">
-                    <label for="proj-lead">Lead Consultant</label>
-                    <input type="text" id="proj-lead" required placeholder="e.g., Sarah Connor">
-                </div>
-                <div class="form-group">
-                    <label for="proj-status">Lifecycle Status</label>
-                    <select id="proj-status">
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
-                        <option value="Under Review">Under Review</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="proj-budget">Asset Valuation</label>
-                    <input type="text" id="proj-budget" required placeholder="e.g., $18,500">
-                </div>
-                <div class="modal-actions">
-                    <button type="button" id="cancel-modal-btn" class="btn-secondary">Cancel Process</button>
-                    <button type="submit" class="btn-primary">Append Record</button>
-                </div>
-            </form>
+  <!-- Side Drawer Menu for Mobile -->
+  <aside class="drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <span class="logo">Apex<span>Dynamics</span></span>
+      <button class="close-btn" id="close-drawer-btn" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="drawer-links">
+      <a href="#features" class="drawer-link">Features</a>
+      <a href="#solutions" class="drawer-link">Solutions</a>
+      <a href="#testimonials" class="drawer-link">Testimonials</a>
+      <a href="#contact" class="btn-drawer drawer-link">Get Started</a>
+    </nav>
+  </aside>
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <span class="badge">Next-Gen Technology</span>
+        <h1>Engineered for Speed, Scaled for Growth</h1>
+        <p>Deploy high-performance web systems with modular architecture, responsive designs, and seamless integrations.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Get Started Free</a>
+          <a href="#features" class="btn-secondary">Explore Platform</a>
         </div>
+      </div>
+      <div class="hero-visual">
+        <div class="code-card">
+          <div class="card-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="card-title">app.config.js</span>
+          </div>
+          <pre><code><span class="keyword">const</span> apex = <span class="keyword">require</span>(<span class="string">'@apex/core'</span>);
+
+<span class="comment">// Initialize application</span>
+<span class="keyword">const</span> app = apex.createApp({
+  mode: <span class="string">'production'</span>,
+  performance: <span class="string">'ultra'</span>,
+  responsive: <span class="keyword">true</span>
+});
+
+app.deploy();</code></pre>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Features Grid Section -->
+  <section id="features" class="features">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Built for High Performance</h2>
+        <p>Everything you need to ship faster, cleaner, and more reliable applications.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Ultra Fast Deployment</h3>
+          <p>Instant edge delivery ensuring lightning-fast response times globally across all devices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>100% Mobile Responsive</h3>
+          <p>Designed mobile-first to guarantee smooth browsing across phones, tablets, and desktops.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Enterprise Security</h3>
+          <p>Built-in SSL, encrypted pipelines, and active threat detection to protect critical data.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛠️</div>
+          <h3>Modular Codebase</h3>
+          <p>Clean HTML, modular CSS, and lightweight JS structured for effortless maintenance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Section -->
+  <section id="solutions" class="solutions">
+    <div class="section-container">
+      <div class="solutions-row">
+        <div class="solutions-content">
+          <h2>Tailored Solutions for Modern Workflows</h2>
+          <p>Stop wrestling with complex boilerplate code. Apex Dynamics gives you clear, production-ready structures out of the box.</p>
+          <ul class="solutions-list">
+            <li>✓ Custom UI design components</li>
+            <li>✓ SEO-optimized markup structure</li>
+            <li>✓ Optimized core web vitals performance</li>
+          </ul>
+        </div>
+        <div class="solutions-card">
+          <h3>Launch Ready Setup</h3>
+          <p>Upload directly to GitHub Pages or Cloudflare with zero build step complications.</p>
+          <a href="#contact" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="section-container">
+      <div class="section-title">
+        <h2>Trusted by Developers</h2>
+        <p>Here is what creators say about working with our architecture.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"The code quality is exceptionally clean and easy to customize. Cut our deployment setup time in half."</p>
+          <div class="user-info">
+            <strong>Alex Vance</strong>
+            <span>Lead Web Developer</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Responsive drawer navigation and mobile optimization worked flawlessly out of the box."</p>
+          <div class="user-info">
+            <strong>Sara Chen</strong>
+            <span>Product Designer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Subscription Section -->
+  <section id="contact" class="cta">
+    <div class="section-container cta-box">
+      <h2>Ready to Build Your Next Project?</h2>
+      <p>Subscribe to stay updated with product releases, performance guides, and updates.</p>
+      <form class="cta-form" id="subscribe-form">
+        <input type="email" placeholder="Enter your email address" required id="email-input" />
+        <button type="submit" class="btn-primary">Subscribe</button>
+      </form>
+      <div id="form-message" class="form-message"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col main-col">
+        <a href="#" class="logo">Apex<span>Dynamics</span></a>
+        <p>Modern web solutions designed for speed, flexibility, and performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#testimonials">Testimonials</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">GitHub Repository</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Apex Dynamics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-                      </html>
-
+</html>
