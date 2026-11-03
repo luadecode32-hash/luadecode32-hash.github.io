@@ -1,0 +1,26 @@
+name: Generate Sitemap Automatically
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sitemap_job:
+    runs-on: ubuntu-latest
+    name: Generate Sitemap
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Generate Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://www.androidmodsarena.indevs.in/
+
+      - name: Commit and Push Sitemap
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Automated sitemap generation by bot"
+          file_pattern: 'sitemap.xml'
+          
