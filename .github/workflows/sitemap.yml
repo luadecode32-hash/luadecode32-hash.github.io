@@ -17,7 +17,7 @@ jobs:
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://yourdomain.com/   # Yahan apni actual website ka link dalein
+          base-url-path: https://www.androidmodsarena.indevs.in/   # Yahan apni actual website ka link dalein
 
       - name: Commit and Push Sitemap
         uses: stefanzweifel/git-auto-commit-action@v5
