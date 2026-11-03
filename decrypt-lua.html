@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Decrypt & Decompile Game Guardian Lua Scripts (2026 Guide)</title>
+    <meta name="description" content="Learn how to decrypt, decompile, and dump obfuscated Lua scripts in Game Guardian. Detailed step-by-step tutorial with tools download link for Android modders.">
+    <meta name="keywords" content="decrypt lua script game guardian, decompile lua, game guardian scripts, lua obfuscation fix, mt manager lua decrypt">
+    <link rel="canonical" href="https://www.androidmodsarena.indevs.in/decrypt-lua-script.html">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="How to Decrypt & Decompile Game Guardian Lua Scripts">
+    <meta property="og:description" content="Step-by-step guide to decrypting obfuscated Game Guardian Lua scripts for memory patching and modding.">
+    <meta property="og:image" content="https://i.ibb.co/sSBV03W/Screenshot-2026-11-03-12-16-16-32-9e8df3d0c7c1f50248b6ee043a653d26.jpg">
+    <meta property="og:type" content="article">
+
+    <!-- Structured Schema for Google Ranking -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "How to Decrypt & Decompile Game Guardian Lua Scripts",
+      "description": "Step-by-step tutorial on how to decompile and analyze obfuscated Lua scripts inside Game Guardian.",
+      "image": "https://i.ibb.co/sSBV03W/Screenshot-2026-11-03-12-16-16-32-9e8df3d0c7c1f50248b6ee043a653d26.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Android Mods Arena"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Android Mods Arena"
+      },
+      "datePublished": "2026-11-03"
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #00ff88;
+            --primary-hover: #00cc6a;
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-red: #ff5555;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.2rem;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 35px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        p, li {
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: #0d1117;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .toc ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .toc a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--primary);
+        }
+
+        /* Image Styling */
+        .img-card {
+            background: #0d1117;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .img-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .img-caption {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Key Steps Styling */
+        ol.steps-list {
+            padding-left: 20px;
+        }
+
+        ol.steps-list li {
+            margin-bottom: 15px;
+        }
+
+        ol.steps-list strong {
+            color: #fff;
+        }
+
+        /* Callout Box */
+        .callout {
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        /* Download Section */
+        .download-card {
+            text-align: center;
+            background: linear-gradient(145deg, #1c2128, #161b22);
+            border: 2px solid var(--primary);
+            border-radius: 14px;
+            padding: 30px 20px;
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+        }
+
+        .download-card h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #000;
+            font-size: 1.15rem;
+            font-weight: 700;
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+            margin-top: 15px;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
+        }
+
+        code {
+            background: #21262d;
+            color: var(--accent-red);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>How to Decrypt and Decompile Lua Scripts in Game Guardian</h1>
+    
+    <div class="meta-info">
+        <span>By <strong>Android Mods Arena</strong></span> • 
+        <span>Updated: November 2026</span> • 
+        <span>Read Time: 4 mins</span>
+    </div>
+
+    <p>Game Guardian Lua scripts are widely used in Android game modding for memory editing, speed hack execution, and value freezing. However, most developers protect their code using <strong>obfuscators and bytecode encryptors</strong>. In this guide, we break down how obfuscation works and the exact steps to decrypt dynamic Lua scripts safely.</p>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h3>Quick Navigation</h3>
+        <ul>
+            <li><a href="#what-is-obfuscation">1. What is Lua Script Obfuscation?</a></li>
+            <li><a href="#tools-needed">2. Essential Tools Required</a></li>
+            <li><a href="#decryption-steps">3. Step-by-Step Decryption Process</a></li>
+            <li><a href="#download-box">4. Download Tools & Resources</a></li>
+        </ul>
+    </div>
+
+    <h2 id="what-is-obfuscation">1. What is Lua Script Obfuscation?</h2>
+    <p>Obfuscation wraps plain-text Lua code inside encrypted layers, hexadecimal strings, or custom <code>loadstring()</code> wrappers. This prevents unauthorized inspection and tampering of the original source code.</p>
+
+    <div class="img-card">
+        <a href="https://ibb.co/PpS67CD" target="_blank" rel="noopener">
+            <img src="https://i.ibb.co/sSBV03W/Screenshot-2026-11-03-12-16-16-32-9e8df3d0c7c1f50248b6ee043a653d26.jpg" alt="Example of Obfuscated Game Guardian Lua Code" loading="lazy">
+        </a>
+        <div class="img-caption">Figure 1: Heavy hex-encrypted and obfuscated Lua code structure.</div>
+    </div>
+
+    <h2 id="tools-needed">2. Essential Tools Required</h2>
+    <p>Before beginning the reversal process, make sure you have installed these essential utility packages:</p>
+    <ul>
+        <li><strong>MT Manager / NP Manager:</strong> Powerful Android file managers for viewing hex arrays and text editing.</li>
+        <li><strong>Unluac / Lua Decompiler:</strong> Converts compiled binary bytecode (<code>.luac</code>) back into readable syntax.</li>
+        <li><strong>Game Guardian (Log Version):</strong> Useful for capturing dynamic runtime memory dumps.</li>
+    </ul>
+
+    <div class="callout">
+        <strong>Pro Tip:</strong> Always analyze scripts in a isolated virtual space (like VPhoneAGA or F1 VM) to keep your primary system secure during script execution testing.
+    </div>
+
+    <h2 id="decryption-steps">3. Step-by-Step Decryption Process</h2>
+    <ol class="steps-list">
+        <li><strong>Analyze the Code Header:</strong> Open the script in MT Manager. Check if the header starts with standard <code>\27Lua</code> bytecode signatures or scrambled <code>string.char()</code> functions.</li>
+        <li><strong>Hook the Loader:</strong> Replace protective execution wrappers like <code>loadstring()</code> or <code>assert()</code> with a print/save function to dump the raw text directly into a text file.</li>
+        <li><strong>Memory Dump:</strong> Execute the script in Game Guardian while logging is active. Extract the decrypted script payload from the app's cache directory during execution.</li>
+        <li><strong>Decompile & Reformat:</strong> Run <code>unluac</code> over the extracted bytecode to restore clean logical variables and function names.</li>
+    </ol>
+
+    <!-- Download CTA Box -->
+    <div class="download-card" id="download-box">
+        <h3>📥 Download Complete Decryption Toolkit</h3>
+        <p>Get instant access to decompiler APKs, MT Manager plugins, and sample scripts in our cloud folder.</p>
+        <a href="https://drive.google.com/drive/folders/1RQFVHee4_BgyOusp4qQW6dDdF6xHTi_q" class="btn-download" target="_blank" rel="noopener">
+            <span>Download Files (Google Drive)</span>
+        </a>
+    </div>
+
+    <h2>Conclusion</h2>
+    <p>Decrypting Game Guardian Lua scripts requires an understanding of how the Lua runtime engine executes string tables and bytecode. Utilize these methods for research, security auditing, and educational game testing.</p>
+</div>
+
+</body>
+</html>
