@@ -3,379 +3,438 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All BCECE B.Tech Colleges 2025 – Fees & Placement Data | Androidsmodarena</title>
-  <meta name="description" content="Complete list of BCECE B.Tech colleges in Bihar with detailed fee structure, placement records, average & highest packages. Compare government & private colleges. Updated for 2025.">
-  <meta name="keywords" content="BCECE B.Tech colleges, BCECE fees, BCECE placement, Bihar engineering colleges, MIT Muzaffarpur fees, LNJPIT Chhapra placement, Gaya College of Engineering, BCE Bhagalpur, NCE Chandi, government engineering colleges Bihar">
-  <meta name="author" content="Androidsmodarena">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://androidsmodarena.com/bcece-btech-colleges-fees-placement">
-  <meta property="og:title" content="All BCECE B.Tech Colleges – Fees & Placement Data 2025 | Androidsmodarena">
-  <meta property="og:description" content="Explore the complete list of BCECE B.Tech colleges in Bihar. Get detailed fee structure, placement statistics, and salary packages. Compare government and private colleges easily.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://androidsmodarena.com/bcece-btech-colleges-fees-placement">
-  <meta property="og:image" content="https://androidsmodarena.com/assets/bcece-banner.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- JSON-LD Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "All BCECE B.Tech Colleges – Fees & Placement Data",
-    "description": "Complete list of BCECE B.Tech colleges in Bihar with fee structure and placement records.",
-    "url": "https://androidsmodarena.com/bcece-btech-colleges-fees-placement",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Androidsmodarena",
-      "url": "https://androidsmodarena.com",
-      "sameAs": "https://t.me/rootmodarena"
-    },
-    "about": {
-      "@type": "ItemList",
-      "name": "BCECE B.Tech Colleges",
-      "itemListElement": [
-        {"@type": "CollegeOrUniversity", "name": "MIT Muzaffarpur"},
-        {"@type": "CollegeOrUniversity", "name": "LNJPIT Chhapra"},
-        {"@type": "CollegeOrUniversity", "name": "Gaya College of Engineering"},
-        {"@type": "CollegeOrUniversity", "name": "BCE Bhagalpur"},
-        {"@type": "CollegeOrUniversity", "name": "NCE Chandi"},
-        {"@type": "CollegeOrUniversity", "name": "Government Engineering College Bettiah"}
-      ]
-    }
-  }
-  </script>
-  <!-- Google Fonts & Basic CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>All 38 Bihar Govt Engineering Colleges (BCECE/UGEAC): Real Fees & Placements</title>
+  <meta name="description" content="Check the real DSTTE fee structure (~₹40k for 4 years) and verified placement data for all 38 BCECE & UGEAC government engineering colleges in Bihar.">
   <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #f8f9fc;
-      color: #1e293b;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
-      padding: 0 0 40px;
-    }
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      color: #1e293b;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 20px;
     }
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
+      max-width: 1180px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
-
-    /* Header / Branding */
-    .site-header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #fff;
-      padding: 18px 0;
-      border-bottom: 4px solid #3b82f6;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-    .brand span {
-      color: #60a5fa;
-    }
-    .telegram-cta {
-      background: #229ED9;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s;
-    }
-    .telegram-cta:hover {
-      background: #1a7fb3;
-      text-decoration: none;
-    }
-
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 50px 20px 30px;
-      background: linear-gradient(to bottom, #ffffff 0%, #f8f9fc 100%);
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      line-height: 1.2;
+    h1 {
       color: #0f172a;
-      margin-bottom: 16px;
+      font-size: 25px;
+      margin-bottom: 8px;
     }
-    .hero h1 span {
-      color: #2563eb;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      max-width: 700px;
-      margin: 0 auto 24px;
+    p.intro {
       color: #475569;
+      font-size: 15px;
+      margin-bottom: 18px;
     }
-    .badge-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+    .fee-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #1e3a8a;
     }
-    .badge {
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 6px 16px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 1px solid #bae6fd;
-    }
-
-    /* Table Section */
-    .section-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin: 40px 0 8px;
-      color: #0f172a;
-    }
-    .section-subtitle {
-      color: #64748b;
-      margin-bottom: 24px;
-      font-size: 0.95rem;
-    }
-    .table-wrapper {
+    .table-responsive {
       overflow-x: auto;
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 30px;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 900px;
-      font-size: 0.92rem;
+      margin-bottom: 20px;
+      font-size: 14px;
     }
     thead {
-      background: #f1f5f9;
+      background-color: #1e3a8a;
+      color: #ffffff;
     }
-    th {
+    th, td {
+      padding: 11px 13px;
       text-align: left;
-      padding: 16px 14px;
-      font-weight: 700;
-      color: #1e293b;
-      border-bottom: 2px solid #cbd5e1;
-      white-space: nowrap;
-    }
-    td {
-      padding: 14px;
       border-bottom: 1px solid #e2e8f0;
-      vertical-align: top;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f8fafc;
     }
     tbody tr:hover {
-      background: #f8fafc;
+      background-color: #f1f5f9;
     }
-    .college-name {
-      font-weight: 600;
-      color: #0f172a;
-    }
-    .college-type {
+    .rank-badge {
+      background-color: #e0e7ff;
+      color: #1e3a8a;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
       display: inline-block;
-      font-size: 0.75rem;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-weight: 600;
-      margin-left: 6px;
     }
-    .govt {
-      background: #dcfce7;
-      color: #166534;
-    }
-    .private {
-      background: #fef3c7;
-      color: #92400e;
-    }
-    .fees {
-      font-weight: 600;
-      color: #0f172a;
-      white-space: nowrap;
-    }
-    .fees small {
-      display: block;
-      font-weight: 400;
+    .tag-new {
+      font-size: 12px;
       color: #64748b;
-      font-size: 0.8rem;
+      font-style: italic;
     }
-    .placement-highlight {
-      color: #16a34a;
-      font-weight: 700;
-    }
-    .placement-avg {
-      color: #2563eb;
-      font-weight: 600;
-    }
-    .tag {
-      display: inline-block;
+    .note {
+      font-size: 13px;
+      color: #475569;
       background: #f1f5f9;
-      color: #475569;
-      padding: 2px 8px;
+      padding: 14px;
+      border-left: 4px solid #1e3a8a;
       border-radius: 4px;
-      font-size: 0.75rem;
-      margin: 2px 2px 0 0;
-    }
-
-    /* Info Cards */
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 30px 0;
-    }
-    .info-card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 24px 20px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
-    }
-    .info-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 10px;
-      color: #0f172a;
-    }
-    .info-card p {
-      font-size: 0.9rem;
-      color: #475569;
-    }
-
-    /* Disclaimer / Footer */
-    .disclaimer {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
-      border-radius: 12px;
-      padding: 18px 20px;
-      font-size: 0.85rem;
-      color: #92400e;
-      margin: 30px 0;
-    }
-    .site-footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-      border-radius: 20px 20px 0 0;
-    }
-    .site-footer .footer-brand {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 6px;
-    }
-    .site-footer .footer-brand span {
-      color: #60a5fa;
-    }
-    .site-footer .footer-links {
-      margin: 16px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-    .site-footer .footer-links a {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-    .site-footer .footer-links a:hover {
-      color: #fff;
-      text-decoration: none;
-    }
-    .site-footer .footer-telegram {
-      display: inline-block;
-      background: #229ED9;
-      color: #fff;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    .site-footer .footer-telegram:hover {
-      background: #1a7fb3;
-      text-decoration: none;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .brand {
-        font-size: 1.2rem;
-      }
-      .telegram-cta {
-        font-size: 0.85rem;
-        padding: 8px 16px;
-      }
-      .section-title {
-        font-size: 1.4rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .telegram-cta {
-        align-self: stretch;
-        justify-content: center;
-      }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">Androids<span>modarena</span></div>
-      <a href="https://t.me/rootmodarena" class="telegram-cta" target="_blank" rel="noopener">
-        ✈️ Join Telegram
-      </a>
-    </div>
-  </header>
+<div class="container">
+  <h1>All 38 Bihar Govt. Engineering Colleges (BCECE / UGEAC): Real Fees & Placements</h1>
+  <p class="intro">
+    Complete rank-wise list of all 38 state government engineering colleges affiliated with <strong>Bihar Engineering University (BEU)</strong>, ranked by establishment year, cutoff preference, infrastructure, and verified placement records.
+  </p>
 
-  <!-- HERO / INTRO -->
-  <section class="hero">
-    <div class="container">
-      <h1>All <span>BCECE B.Tech Colleges</span> – Fees & Placement Data 2025</h1>
+  <div class="fee-banner">
+    <strong>Official DSTTE Bihar Uniform Fee Structure (Applicable to All 38 Colleges):</strong><br>
+    • <strong>College Fee:</strong> ₹2,630 – ₹3,230 / year (Tuition Fee is ₹120/yr for Gen/OBC & ₹0 for SC/ST + ₹2,500 Development Fee)<br>
+    • <strong>BEU Exam & Registration Fee:</strong> ~₹3,200 – ₹3,700 / semester<br>
+    • <strong>Total 4-Year Academic Cost:</strong> <strong>~₹38,000 – ₹45,000</strong> (Hostel & Mess are optional at ~₹3,500–₹4,200/month)
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Pref. Rank</th>
+          <th>College Name</th>
+          <th>Est. Year</th>
+          <th>4-Yr Academic Fee</th>
+          <th>Median / Avg. Package</th>
+          <th>Highest Reported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-badge">#1</span></td>
+          <td>Muzaffarpur Institute of Technology (MIT), Muzaffarpur</td>
+          <td>1954</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹4.07 – ₹6.30 LPA (NIRF)</td>
+          <td>₹18.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#2</span></td>
+          <td>Bhagalpur College of Engineering (BCE), Bhagalpur</td>
+          <td>1960</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹4.00 – ₹5.40 LPA</td>
+          <td>₹13.00 – ₹15.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#3</span></td>
+          <td>Bakhtiyarpur College of Engineering (BCE), Patna</td>
+          <td>2016</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹4.10 – ₹5.00 LPA</td>
+          <td>₹15.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#4</span></td>
+          <td>Nalanda College of Engineering (NCE), Chandi</td>
+          <td>2008</td>
+          <td>~₹38,000 – ₹44,000</td>
+          <td>₹4.00 – ₹5.00 LPA</td>
+          <td>₹17.39 LPA (Off-campus)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#5</span></td>
+          <td>Gaya College of Engineering (GCE), Gaya</td>
+          <td>2008</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.20 – ₹4.00 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#6</span></td>
+          <td>Darbhanga College of Engineering (DCE), Darbhanga</td>
+          <td>2008</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹3.36 – ₹3.84 LPA</td>
+          <td>₹17.39 LPA (Off-campus)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#7</span></td>
+          <td>Motihari College of Engineering (MCE), Motihari</td>
+          <td>2008</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹3.20 – ₹4.00 LPA</td>
+          <td>₹12.00 – ₹15.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#8</span></td>
+          <td>Loknayak Jai Prakash Institute of Technology (LNJPIT), Chapra</td>
+          <td>2012</td>
+          <td>~₹40,000 – ₹45,000</td>
+          <td>₹3.00 – ₹4.00 LPA</td>
+          <td>₹12.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#9</span></td>
+          <td>Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Begusarai</td>
+          <td>2016</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.60 LPA</td>
+          <td>₹8.00 – ₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#10</span></td>
+          <td>Sitamarhi Institute of Technology (SIT), Sitamarhi</td>
+          <td>2016</td>
+          <td>~₹38,200</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#11</span></td>
+          <td>Purnea College of Engineering (PCE), Purnea</td>
+          <td>2017</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#12</span></td>
+          <td>Saharsa College of Engineering (SCE), Saharsa</td>
+          <td>2017</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#13</span></td>
+          <td>Katihar Engineering College (KEC), Katihar</td>
+          <td>2016</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#14</span></td>
+          <td>B.P. Mandal College of Engineering (BPMCE), Madhepura</td>
+          <td>2016</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹6.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#15</span></td>
+          <td>Shershah College of Engineering (SCE), Sasaram</td>
+          <td>2016</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#16</span></td>
+          <td>Supaul College of Engineering (SCE), Supaul</td>
+          <td>2017</td>
+          <td>~₹42,080</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹6.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#17</span></td>
+          <td>Government Engineering College, Vaishali</td>
+          <td>2018</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 LPA (Pool/Campus)</td>
+          <td>₹6.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#18</span></td>
+          <td>Government Engineering College, Banka</td>
+          <td>2018</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 LPA (Pool/Campus)</td>
+          <td>₹6.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#19</span></td>
+          <td>Government Engineering College, Jamui</td>
+          <td>2018</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td>₹3.00 LPA (Pool/Campus)</td>
+          <td>₹6.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#20</span></td>
+          <td>Government Engineering College, Nawada</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#21</span></td>
+          <td>Government Engineering College, Bhojpur</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#22</span></td>
+          <td>Government Engineering College, Buxar</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#23</span></td>
+          <td>Government Engineering College, Aurangabad</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#24</span></td>
+          <td>Government Engineering College, Samastipur</td>
+          <td>2019</td>
+          <td>~₹42,520</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#25</span></td>
+          <td>Government Engineering College, Gopalganj</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#26</span></td>
+          <td>Government Engineering College, Siwan</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#27</span></td>
+          <td>Government Engineering College, West Champaran (Bettiah)</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#28</span></td>
+          <td>Shri Phanishwar Nath Renu Engineering College (SPNREC), Araria</td>
+          <td>2019</td>
+          <td>~₹45,680</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#29</span></td>
+          <td>Government Engineering College, Kishanganj</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#30</span></td>
+          <td>Government Engineering College, Munger</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#31</span></td>
+          <td>Government Engineering College, Sheikhpura</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#32</span></td>
+          <td>Government Engineering College, Lakhisarai</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#33</span></td>
+          <td>Government Engineering College, Madhubani</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#34</span></td>
+          <td>Government Engineering College, Jehanabad</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#35</span></td>
+          <td>Government Engineering College, Arwal</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#36</span></td>
+          <td>Government Engineering College, Kaimur (Bhabua)</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#37</span></td>
+          <td>Government Engineering College, Khagaria</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#38</span></td>
+          <td>Government Engineering College, Sheohar</td>
+          <td>2019</td>
+          <td>~₹38,000 – ₹42,000</td>
+          <td><span class="tag-new">BEU Pool Drive (~₹3 LPA)</span></td>
+          <td><span class="tag-new">Not Formally Published</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Fact-Checked Notes for Students:</strong><br>
+    1. <strong>Why do some websites show ₹1.2 Lakh – ₹4 Lakh fees?</strong> That figure includes 4 years of optional hostel & mess charges (~₹38,000/year for mess) or the maximum ₹4 Lakh limit of the Bihar Student Credit Card (BSCC) scheme. Actual college + BEU exam fees total under ₹45,000 for 4 years.<br>
+    2. <strong>Scholarships:</strong> SC/ST/BC/EBC students receive ₹14,000–₹15,000/year under the Bihar Post Matric Scholarship (PMS), which effectively covers almost the entire academic fee.<br>
+    3. <strong>How Placements Work in Newer GECs:</strong> Colleges established in 2019–2020 participate in centralized placement pool drives organized by Bihar Engineering University (BEU) in Patna, where IT service firms (TCS, Wipro, Infosys, HCL, Accenture, QSpiders) hire across colleges at ₹3.0–₹3.6 LPA.
+  </div>
+</div>
+
+</body>
+</html>
+     <h1>All <span>BCECE B.Tech Colleges</span> – Fees & Placement Data 2025</h1>
       <p>Your complete guide to Bihar’s top engineering colleges accepting BCECE scores. Compare tuition fees, average & highest placement packages, and top recruiters – all in one place.</p>
       <div class="badge-group">
         <span class="badge">✅ Updated for 2025</span>
