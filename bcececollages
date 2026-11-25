@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All BCECE B.Tech Colleges 2025 – Fees & Placement Data | Androidsmodarena</title>
+  <meta name="description" content="Complete list of BCECE B.Tech colleges in Bihar with detailed fee structure, placement records, average & highest packages. Compare government & private colleges. Updated for 2025.">
+  <meta name="keywords" content="BCECE B.Tech colleges, BCECE fees, BCECE placement, Bihar engineering colleges, MIT Muzaffarpur fees, LNJPIT Chhapra placement, Gaya College of Engineering, BCE Bhagalpur, NCE Chandi, government engineering colleges Bihar">
+  <meta name="author" content="Androidsmodarena">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://androidsmodarena.com/bcece-btech-colleges-fees-placement">
+  <meta property="og:title" content="All BCECE B.Tech Colleges – Fees & Placement Data 2025 | Androidsmodarena">
+  <meta property="og:description" content="Explore the complete list of BCECE B.Tech colleges in Bihar. Get detailed fee structure, placement statistics, and salary packages. Compare government and private colleges easily.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://androidsmodarena.com/bcece-btech-colleges-fees-placement">
+  <meta property="og:image" content="https://androidsmodarena.com/assets/bcece-banner.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "All BCECE B.Tech Colleges – Fees & Placement Data",
+    "description": "Complete list of BCECE B.Tech colleges in Bihar with fee structure and placement records.",
+    "url": "https://androidsmodarena.com/bcece-btech-colleges-fees-placement",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Androidsmodarena",
+      "url": "https://androidsmodarena.com",
+      "sameAs": "https://t.me/rootmodarena"
+    },
+    "about": {
+      "@type": "ItemList",
+      "name": "BCECE B.Tech Colleges",
+      "itemListElement": [
+        {"@type": "CollegeOrUniversity", "name": "MIT Muzaffarpur"},
+        {"@type": "CollegeOrUniversity", "name": "LNJPIT Chhapra"},
+        {"@type": "CollegeOrUniversity", "name": "Gaya College of Engineering"},
+        {"@type": "CollegeOrUniversity", "name": "BCE Bhagalpur"},
+        {"@type": "CollegeOrUniversity", "name": "NCE Chandi"},
+        {"@type": "CollegeOrUniversity", "name": "Government Engineering College Bettiah"}
+      ]
+    }
+  }
+  </script>
+  <!-- Google Fonts & Basic CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f8f9fc;
+      color: #1e293b;
+      line-height: 1.6;
+      padding: 0 0 40px;
+    }
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Branding */
+    .site-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: #fff;
+      padding: 18px 0;
+      border-bottom: 4px solid #3b82f6;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .brand span {
+      color: #60a5fa;
+    }
+    .telegram-cta {
+      background: #229ED9;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .telegram-cta:hover {
+      background: #1a7fb3;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: linear-gradient(to bottom, #ffffff 0%, #f8f9fc 100%);
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+    .hero h1 span {
+      color: #2563eb;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      color: #475569;
+    }
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .badge {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1px solid #bae6fd;
+    }
+
+    /* Table Section */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 40px 0 8px;
+      color: #0f172a;
+    }
+    .section-subtitle {
+      color: #64748b;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+    .table-wrapper {
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      font-size: 0.92rem;
+    }
+    thead {
+      background: #f1f5f9;
+    }
+    th {
+      text-align: left;
+      padding: 16px 14px;
+      font-weight: 700;
+      color: #1e293b;
+      border-bottom: 2px solid #cbd5e1;
+      white-space: nowrap;
+    }
+    td {
+      padding: 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+    }
+    tbody tr:hover {
+      background: #f8fafc;
+    }
+    .college-name {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .college-type {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .govt {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .private {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .fees {
+      font-weight: 600;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+    .fees small {
+      display: block;
+      font-weight: 400;
+      color: #64748b;
+      font-size: 0.8rem;
+    }
+    .placement-highlight {
+      color: #16a34a;
+      font-weight: 700;
+    }
+    .placement-avg {
+      color: #2563eb;
+      font-weight: 600;
+    }
+    .tag {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin: 2px 2px 0 0;
+    }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .info-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 20px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    }
+    .info-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    .info-card p {
+      font-size: 0.9rem;
+      color: #475569;
+    }
+
+    /* Disclaimer / Footer */
+    .disclaimer {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 0.85rem;
+      color: #92400e;
+      margin: 30px 0;
+    }
+    .site-footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+      border-radius: 20px 20px 0 0;
+    }
+    .site-footer .footer-brand {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .site-footer .footer-brand span {
+      color: #60a5fa;
+    }
+    .site-footer .footer-links {
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .site-footer .footer-links a {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    .site-footer .footer-links a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+    .site-footer .footer-telegram {
+      display: inline-block;
+      background: #229ED9;
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .site-footer .footer-telegram:hover {
+      background: #1a7fb3;
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .brand {
+        font-size: 1.2rem;
+      }
+      .telegram-cta {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .telegram-cta {
+        align-self: stretch;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Androids<span>modarena</span></div>
+      <a href="https://t.me/rootmodarena" class="telegram-cta" target="_blank" rel="noopener">
+        ✈️ Join Telegram
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO / INTRO -->
+  <section class="hero">
+    <div class="container">
+      <h1>All <span>BCECE B.Tech Colleges</span> – Fees & Placement Data 2025</h1>
+      <p>Your complete guide to Bihar’s top engineering colleges accepting BCECE scores. Compare tuition fees, average & highest placement packages, and top recruiters – all in one place.</p>
+      <div class="badge-group">
+        <span class="badge">✅ Updated for 2025</span>
+        <span class="badge">🏛️ Government & Private</span>
+        <span class="badge">📊 Placement Records</span>
+        <span class="badge">💰 Fee Structure</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- COLLEGE TABLE -->
+    <h2 class="section-title">BCECE B.Tech Colleges – Fee & Placement Comparison</h2>
+    <p class="section-subtitle">Data compiled from official college reports, Careers360, Collegedunia, and other trusted sources. Fees are indicative total tuition for the full B.Tech program.</p>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>College Name</th>
+            <th>Type</th>
+            <th>Total B.Tech Fees (Approx.)</th>
+            <th>Highest Package</th>
+            <th>Average Package</th>
+            <th>Placement Rate / Top Recruiters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- MIT Muzaffarpur -->
+          <tr>
+            <td class="college-name">Muzaffarpur Institute of Technology (MIT)</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹25,600 – ₹1.1 Lakh <small>(Gen/BC/EBC: ₹25,600; SC/ST: ₹5,600)</small></td>
+            <td class="placement-highlight">₹21 – ₹29 LPA</td>
+            <td class="placement-avg">₹4.3 – ₹4.6 LPA</td>
+            <td>87% placed<br><span class="tag">Wipro</span><span class="tag">TATA Motors</span><span class="tag">Indian Oil</span></td>
+          </tr>
+          <!-- LNJPIT Chhapra -->
+          <tr>
+            <td class="college-name">Loknayak Jai Prakash Institute of Technology (LNJPIT)</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹3.2 Lakh <small>(Total program fee)</small></td>
+            <td class="placement-highlight">₹45 LPA</td>
+            <td class="placement-avg">₹6.9 – ₹21.6 LPA*</td>
+            <td>83% placed<br><span class="tag">HCL</span><span class="tag">Coal India</span><span class="tag">Prism Cement</span></td>
+          </tr>
+          <!-- Gaya College of Engineering -->
+          <tr>
+            <td class="college-name">Gaya College of Engineering (GCE)</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹50,600 – ₹2.8 Lakh <small>(Varies by branch)</small></td>
+            <td class="placement-highlight">₹7.5 – ₹17 LPA</td>
+            <td class="placement-avg">₹3 – ₹4.5 LPA</td>
+            <td>60–79% placed<br><span class="tag">Chegg</span><span class="tag">Cactus</span><span class="tag">Faceprep</span></td>
+          </tr>
+          <!-- BCE Bhagalpur -->
+          <tr>
+            <td class="college-name">Bhagalpur College of Engineering (BCE)</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹1.85 – ₹4.13 Lakh <small>(Branch-dependent)</small></td>
+            <td class="placement-highlight">₹6.75 – ₹30 LPA</td>
+            <td class="placement-avg">₹4 – ₹5.4 LPA</td>
+            <td>79% placed<br><span class="tag">TCS</span><span class="tag">Wipro</span><span class="tag">IBM</span><span class="tag">Infosys</span></td>
+          </tr>
+          <!-- NCE Chandi -->
+          <tr>
+            <td class="college-name">Nalanda College of Engineering (NCE), Chandi</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹28,000 – ₹33,580 per year <small>(Total ~₹1.12 – ₹1.34 Lakh)</small></td>
+            <td class="placement-highlight">₹8.6 – ₹17 LPA</td>
+            <td class="placement-avg">₹3.2 – ₹6 LPA</td>
+            <td>83% placed<br><span class="tag">TCS</span><span class="tag">Wipro</span><span class="tag">Infosys</span><span class="tag">HCL</span></td>
+          </tr>
+          <!-- GEC Bettiah -->
+          <tr>
+            <td class="college-name">Government Engineering College (GEC), Bettiah</td>
+            <td><span class="college-type govt">Government</span></td>
+            <td class="fees">₹70,000 per year <small>(Total ~₹1.8 Lakh)</small></td>
+            <td class="placement-highlight">₹6.73 LPA</td>
+            <td class="placement-avg">₹3.4 LPA</td>
+            <td>58% placed<br><span class="tag">IT & Core Companies</span></td>
+          </tr>
+          <!-- Private Example: Sityog -->
+          <tr>
+            <td class="college-name">Sityog Institute of Technology, Aurangabad</td>
+            <td><span class="college-type private">Private</span></td>
+            <td class="fees">₹2.62 Lakh <small>(Approx. total)</small></td>
+            <td class="placement-highlight">₹18 LPA</td>
+            <td class="placement-avg">₹6 LPA</td>
+            <td>95% placed<br><span class="tag">Multi-sector</span></td>
+          </tr>
+          <!-- Private Example: JP College -->
+          <tr>
+            <td class="college-name">JP College of Engineering, Biharsharif</td>
+            <td><span class="college-type private">Private</span></td>
+            <td class="fees">₹3.13 Lakh <small>(Approx. total)</small></td>
+            <td class="placement-highlight">₹10 LPA</td>
+            <td class="placement-avg">₹6 LPA</td>
+            <td>94% placed<br><span class="tag">Tech & Core</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KEY INSIGHTS -->
+    <h2 class="section-title">Key Insights for BCECE Aspirants</h2>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>💰 Affordable Government Fees</h3>
+        <p>Most government BCECE colleges charge between <strong>₹25,000 and ₹1.2 Lakh</strong> for the entire B.Tech program, making them highly cost-effective compared to private institutes.</p>
+      </div>
+      <div class="info-card">
+        <h3>📈 Strong Placement Records</h3>
+        <p>Top government colleges like <strong>MIT Muzaffarpur, LNJPIT Chhapra, and NCE Chandi</strong> consistently report placement rates above 80%, with average packages ranging from <strong>₹4 LPA to ₹6 LPA</strong>.</p>
+      </div>
+      <div class="info-card">
+        <h3>🏆 Highest Packages</h3>
+        <p>Exceptional offers have reached <strong>₹45 LPA at LNJPIT Chhapra</strong> and <strong>₹29 LPA at MIT Muzaffarpur</strong>, proving that BCECE colleges can launch high-paying careers.</p>
+      </div>
+      <div class="info-card">
+        <h3>🏛️ Private Alternatives</h3>
+        <p>Private BCECE-accepting colleges like <strong>Sityog Institute</strong> and <strong>JP College</strong> offer higher fee flexibility but also report impressive placement rates (94–95%) with average packages around <strong>₹6 LPA</strong>.</p>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      <strong>⚠️ Disclaimer:</strong> The fee and placement data presented above is compiled from multiple public sources (Careers360, Collegedunia, official college websites, and student reviews) and is subject to change. Fees may vary by category (General/SC/ST), branch, and hostel charges. Placement statistics are indicative and may fluctuate year to year. Always verify the latest information directly from the respective college or the official BCECEB counselling portal before making admission decisions.
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-brand">Androids<span>modarena</span></div>
+      <p style="font-size:0.9rem; max-width:500px; margin:0 auto;">Your trusted source for tech trends, education data, and smart comparisons.</p>
+      <div class="footer-links">
+        <a href="https://t.me/rootmodarena" target="_blank" rel="noopener">Telegram Channel</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+        <a href="#">Contact</a>
+      </div>
+      <a href="https://t.me/rootmodarena" class="footer-telegram" target="_blank" rel="noopener">
+        ✈️ Join @rootmodarena on Telegram
+      </a>
+      <p style="margin-top:20px; font-size:0.8rem; color:#64748b;">&copy; 2025 Androidsmodarena. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
