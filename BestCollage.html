@@ -1,0 +1,852 @@
+Here is a complete HTML document for a state-wise B.Tech colleges directory page. It includes SEO meta tags, a hero section, a top-10 table, six state-by-state college tables with average packages, FAQs, and structured data to help with Google ranking.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= PRIMARY SEO ================= -->
+<title>Best B.Tech Colleges in India 2026 | State-Wise Average Package (LPA)</title>
+<meta name="description" content="State-wise list of the best B.Tech colleges in India 2026 with mean average placement packages (LPA) — IITs, NITs, IIITs, state universities & top private colleges.">
+<meta name="keywords" content="best btech colleges in india, state wise btech colleges, btech average package, IIT average package, NIT average package, IIIT average package, top private engineering colleges india, btech placement package list">
+<meta name="author" content="Your Website Name">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://www.yourwebsite.com/best-btech-colleges-india-state-wise-average-package">
+
+<!-- ================= OPEN GRAPH / SOCIAL ================= -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Your Website Name">
+<meta property="og:title" content="Best B.Tech Colleges in India 2026 | State-Wise Average Package (LPA)">
+<meta property="og:description" content="Complete state-wise directory of India's best B.Tech colleges with mean average placement packages in LPA — Delhi, Maharashtra, UP, Karnataka, Telangana & Tamil Nadu.">
+<meta property="og:image" content="https://www.yourwebsite.com/images/best-btech-colleges-india-state-wise-average-package.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Best B.Tech colleges in India state-wise with average placement packages">
+<meta property="og:url" content="https://www.yourwebsite.com/best-btech-colleges-india-state-wise-average-package">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Best B.Tech Colleges in India 2026 | State-Wise Average Package">
+<meta name="twitter:description" content="State-wise B.Tech colleges directory with mean average placement packages (LPA) for IITs, NITs, IIITs, state and private institutes.">
+<meta name="twitter:image" content="https://www.yourwebsite.com/images/best-btech-colleges-india-state-wise-average-package.jpg">
+
+<meta name="theme-color" content="#0b2545">
+
+<!-- ================= STYLES ================= -->
+<style>
+:root{
+  --navy:#0b2545;
+  --navy-2:#13315c;
+  --accent:#ff8c00;
+  --accent-2:#ffb703;
+  --ink:#1b1b1b;
+  --muted:#5b6b7f;
+  --line:#e3e8ef;
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --radius:14px;
+  --shadow:0 6px 24px rgba(11,37,69,.08);
+  --shadow-lg:0 14px 40px rgba(11,37,69,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  font-size:16.5px;
+}
+img{max-width:100%;display:block}
+a{color:#0a58ca;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* ---------- HEADER ---------- */
+.site-header{
+  background:var(--navy);
+  color:#fff;
+  position:sticky;top:0;z-index:50;
+  box-shadow:0 2px 14px rgba(0,0,0,.18);
+}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.logo{font-weight:800;letter-spacing:.4px;font-size:1.06rem;color:#fff}
+.logo span{color:var(--accent-2)}
+.site-header nav a{color:#dbe6f4;font-size:.92rem;margin-left:18px;font-weight:600}
+.site-header nav a:hover{color:#fff;text-decoration:none}
+
+/* ---------- HERO ---------- */
+.hero{
+  background:
+    radial-gradient(1000px 380px at 88% -12%, rgba(255,140,0,.38), transparent 62%),
+    linear-gradient(135deg,var(--navy) 0%, var(--navy-2) 55%, #1d4e89 100%);
+  color:#fff;
+  padding:44px 0 52px;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center}
+.badge{
+  display:inline-block;background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);
+  color:#fff;font-size:.76rem;font-weight:700;letter-spacing:1.1px;
+  text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(1.6rem,3.4vw,2.55rem);
+  line-height:1.22;margin:0 0 14px;font-weight:800;letter-spacing:-.4px;
+}
+.hero h1 em{color:var(--accent-2);font-style:normal}
+.hero p.lead{font-size:1.02rem;color:#d7e3f2;margin:0 0 18px;max-width:60ch}
+.hero-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.hero-facts span{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  padding:7px 13px;border-radius:999px;font-size:.84rem;font-weight:600;
+}
+.hero-figure{margin:0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-lg);background:linear-gradient(135deg,#1d4e89,#0b2545)}
+.hero-figure img{width:100%;height:100%;aspect-ratio:16/10;object-fit:cover}
+.hero-figure figcaption{
+  font-size:.76rem;color:#c9d8ec;padding:9px 12px;background:rgba(0,0,0,.28);
+  text-align:center;letter-spacing:.2px;
+}
+
+/* ---------- TOC ---------- */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;margin:-28px 0 30px;box-shadow:var(--shadow);position:relative;z-index:5}
+.toc h2{font-size:.86rem;text-transform:uppercase;letter-spacing:1.3px;color:var(--muted);margin:0 0 12px}
+.toc ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:9px}
+.toc a{
+  display:inline-block;background:#eef4fb;border:1px solid #d8e5f4;color:var(--navy-2);
+  padding:7px 14px;border-radius:999px;font-size:.87rem;font-weight:600;
+}
+.toc a:hover{background:var(--navy);color:#fff;border-color:var(--navy);text-decoration:none}
+
+/* ---------- SECTIONS ---------- */
+section.block{margin:0 0 42px}
+h2.sec-title{
+  font-size:clamp(1.25rem,2.4vw,1.7rem);color:var(--navy);
+  margin:0 0 6px;font-weight:800;letter-spacing:-.2px;
+  padding-left:14px;border-left:5px solid var(--accent);
+}
+.sec-sub{color:var(--muted);font-size:.94rem;margin:0 0 18px;padding-left:19px}
+
+/* ---------- CARDS ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px;margin-bottom:26px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px;font-size:.82rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}
+.card .big{font-size:1.5rem;font-weight:800;color:var(--navy);line-height:1.2}
+.card small{color:var(--muted);font-size:.82rem}
+
+/* ---------- TABLES ---------- */
+.table-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:720px}
+caption{
+  caption-side:top;text-align:left;padding:15px 18px;font-weight:800;color:var(--navy);
+  font-size:1rem;background:#f0f6fd;border-bottom:1px solid var(--line);
+}
+thead th{
+  background:var(--navy);color:#fff;text-align:left;font-weight:700;
+  font-size:.79rem;letter-spacing:.7px;text-transform:uppercase;
+  padding:12px 14px;white-space:nowrap;position:sticky;top:0;
+}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:#fafcff}
+tbody tr:hover{background:#eef5ff}
+tbody tr:last-child td{border-bottom:none}
+td.name{font-weight:600;color:var(--navy-2);min-width:230px}
+td.pkg{font-weight:800;color:#0d7a3f;white-space:nowrap}
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.3px;
+  padding:3px 9px;border-radius:999px;white-space:nowrap;
+}
+.tag.central{background:#e7f0ff;color:#0b4ea2}
+.tag.state{background:#e8f7ee;color:#0d7a3f}
+.tag.semi{background:#fff4e0;color:#a35a00}
+.tag.private{background:#f1e9ff;color:#5b21b6}
+.tag.affiliated{background:#ffe9ec;color:#b02a37}
+.note{font-size:.86rem;color:var(--muted);margin:12px 0 0}
+
+/* ---------- FAQ ---------- */
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:14px 18px;margin-bottom:11px;box-shadow:0 2px 10px rgba(11,37,69,.05);
+}
+details[open]{border-color:#c8dcf3}
+summary{
+  cursor:pointer;font-weight:700;color:var(--navy);font-size:.98rem;
+  list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.35rem;color:var(--accent);font-weight:800;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 2px;color:#33465e;font-size:.93rem}
+
+/* ---------- CTA ---------- */
+.cta{
+  background:linear-gradient(135deg,#0b2545,#1d4e89);
+  color:#fff;border-radius:18px;padding:30px 26px;text-align:center;
+  box-shadow:var(--shadow-lg);
+}
+.cta h2{margin:0 0 8px;font-size:1.32rem}
+.cta p{margin:0 0 16px;color:#cfe0f3;font-size:.95rem}
+.cta a.btn{
+  display:inline-block;background:var(--accent);color:#1b1b1b;
+  font-weight:800;padding:12px 26px;border-radius:999px;font-size:.95rem;
+}
+.cta a.btn:hover{background:var(--accent-2);text-decoration:none}
+
+/* ---------- FOOTER ---------- */
+.site-footer{background:#08192e;color:#9fb3c9;padding:30px 0;margin-top:48px;font-size:.87rem}
+.site-footer a{color:#cfdcec}
+.footer-grid{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between}
+.footer-grid div{min-width:200px}
+.site-footer h4{color:#fff;font-size:.84rem;letter-spacing:1px;text-transform:uppercase;margin:0 0 8px}
+.site-footer p{margin:0}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:880px){
+  .hero-grid{grid-template-columns:1fr;gap:24px}
+  .hero{padding:32px 0 46px}
+  .site-header nav{display:none}
+  .toc{margin-top:-20px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .hero-facts span{font-size:.78rem}
+  caption{font-size:.92rem}
+}
+</style>
+
+<!-- ================= STRUCTURED DATA (JSON-LD) ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.yourwebsite.com/#website",
+      "url": "https://www.yourwebsite.com/",
+      "name": "Your Website Name",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.yourwebsite.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.yourwebsite.com/#organization",
+      "name": "Your Website Name",
+      "url": "https://www.yourwebsite.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.yourwebsite.com/images/logo.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yourwebsite.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Engineering Colleges", "item": "https://www.yourwebsite.com/engineering-colleges" },
+        { "@type": "ListItem", "position": 3, "name": "Best B.Tech Colleges in India (State-Wise Average Package)" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "headline": "Best B.Tech Colleges in India 2026 — State-Wise Directory with Average Placement Package (LPA)",
+      "description": "State-wise list of the best B.Tech colleges in India with mean average placement packages (LPA) across central government, state government, semi-government, deemed and private institutes.",
+      "image": "https://www.yourwebsite.com/images/best-btech-colleges-india-state-wise-average-package.jpg",
+      "author": { "@type": "Organization", "name": "Your Website Name", "url": "https://www.yourwebsite.com/" },
+      "publisher": { "@id": "https://www.yourwebsite.com/#organization" },
+      "datePublished": "2026-01-10",
+      "dateModified": "2026-01-10",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://www.yourwebsite.com/best-btech-colleges-india-state-wise-average-package"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Top 10 B.Tech Colleges in India by Average Placement Package",
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "numberOfItems": 10,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "IIIT Hyderabad — ~₹31.5 LPA" },
+        { "@type": "ListItem", "position": 2, "name": "IIIT Lucknow — ~₹30.5 LPA" },
+        { "@type": "ListItem", "position": 3, "name": "IIIT Bangalore — ~₹28.5 LPA" },
+        { "@type": "ListItem", "position": 4, "name": "IIT Kanpur — ~₹26.9 LPA" },
+        { "@type": "ListItem", "position": 5, "name": "IIIT Allahabad — ~₹25.8 LPA" },
+        { "@type": "ListItem", "position": 6, "name": "IIT (BHU) Varanasi — ~₹24.6 LPA" },
+        { "@type": "ListItem", "position": 7, "name": "IIT Hyderabad — ~₹24.1 LPA" },
+        { "@type": "ListItem", "position": 8, "name": "IIT Bombay — ~₹23.5 LPA" },
+        { "@type": "ListItem", "position": 9, "name": "IIT Madras — ~₹22.0 LPA" },
+        { "@type": "ListItem", "position": 10, "name": "IIT Delhi — ~₹21.5 LPA" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which B.Tech college has the highest average package in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As per this directory, IIIT Hyderabad has the highest mean average B.Tech package at about ₹31.5 LPA, followed by IIIT Lucknow (~₹30.5 LPA), IIIT Bangalore (~₹28.5 LPA) and IIT Kanpur (~₹26.9 LPA)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average package of IIT Delhi B.Tech?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The overall mean average B.Tech placement package at IIT Delhi is approximately ₹21.5 LPA across all branches. CSE and IT branches typically report higher averages than the institute-wide mean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these average packages mean or median?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All figures in this directory are Mean Average CTC (in LPA) taken from institutional placement reports — not median. Mean averages are usually pulled upward by a small number of very high packages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which state has the best B.Tech colleges in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Maharashtra, Tamil Nadu, Karnataka, Uttar Pradesh, Telangana and Delhi NCT together host the largest concentration of high-package B.Tech institutes in India. IIT Bombay (Maharashtra) at ~₹23.5 LPA and IIT Madras (Tamil Nadu) at ~₹22.0 LPA lead their respective states."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the average package of NIT Trichy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NIT Tiruchirappalli (NIT Trichy) reports an overall mean average B.Tech package of approximately ₹17.8 LPA, one of the highest among NITs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which is the best private B.Tech college in Maharashtra by package?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Among state-affiliated private colleges in Maharashtra, Sardar Patel Institute of Technology (SPIT), Andheri leads with approximately ₹15.1 LPA, followed by PICT Pune (~₹12.8 LPA) and DJSCE Mumbai (~₹10.5 LPA)."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">Your<span>Website</span></div>
+    <nav aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/engineering-colleges">Engineering</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap hero-grid">
+
+    <div>
+      <span class="badge">Updated · Placement Report 2026</span>
+      <h1>Best B.Tech Colleges in India — <em>State-Wise Average Package</em> Directory (LPA)</h1>
+      <p class="lead">
+        Institution-by-institution directory of India's best B.Tech colleges with
+        <strong>mean average placement packages in LPA</strong> — covering Central Government (IITs, NITs, IIITs),
+        State Government universities, Semi-Government / Aided / PPP institutes, Premier Private &amp; Deemed
+        universities, and Top State-Affiliated Private colleges.
+      </p>
+      <div class="hero-facts">
+        <span>📍 6 States · 119 Institutes</span>
+        <span>💰 Mean Average CTC</span>
+        <span>🎓 JEE / State CET / Direct</span>
+        <span>🏛️ Govt + Private</span>
+      </div>
+    </div>
+
+    <figure class="hero-figure">
+      <!-- ✅ REPLACE the src & alt below with your own 1200x750 image -->
+      <img
+        src="images/best-btech-colleges-india-state-wise-average-package.jpg"
+        alt="Best B.Tech colleges in India state-wise with average placement package in LPA — IIT, NIT, IIIT and top private engineering colleges"
+        width="1200"
+        height="750"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async">
+      <figcaption>India's top B.Tech institutes ranked by mean average placement package (LPA)</figcaption>
+    </figure>
+
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ================= TABLE OF CONTENTS ================= -->
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Jump to a State</h2>
+    <ul>
+      <li><a href="#top10">Top 10 Overall</a></li>
+      <li><a href="#delhi">Delhi (NCT)</a></li>
+      <li><a href="#maharashtra">Maharashtra</a></li>
+      <li><a href="#uttar-pradesh">Uttar Pradesh</a></li>
+      <li><a href="#karnataka">Karnataka</a></li>
+      <li><a href="#telangana">Telangana</a></li>
+      <li><a href="#tamil-nadu">Tamil Nadu</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HOW TO READ ================= -->
+  <section class="block" id="how-to-read">
+    <h2 class="sec-title">How to Read This Directory</h2>
+    <p class="sec-sub">Category definitions and the placement metric used across every table on this page.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Placement Metric</h3>
+        <div class="big">Mean Avg. CTC</div>
+        <small>Overall B.Tech mean average annual package across all branches (LPA). Not median. CSE/IT averages run higher.</small>
+      </div>
+      <div class="card">
+        <h3>Central Govt.</h3>
+        <div class="big">IIT / NIT / IIIT</div>
+        <small>IITs, NITs, Centrally Funded IIITs and Central Universities — admissions via JoSAA / CSAB.</small>
+      </div>
+      <div class="card">
+        <h3>State Govt.</h3>
+        <div class="big">State Universities</div>
+        <small>State-funded government engineering universities and colleges.</small>
+      </div>
+      <div class="card">
+        <h3>Semi-Govt. / PPP</h3>
+        <div class="big">Aided / PPP</div>
+        <small>Government-aided autonomous institutes, grant-in-aid colleges and PPP-mode IIITs.</small>
+      </div>
+      <div class="card">
+        <h3>Private / Deemed</h3>
+        <div class="big">Deemed Univ.</div>
+        <small>Top standalone private &amp; deemed universities (BITS, Manipal, PES, VIT, SRM, Amrita, Thapar, etc.).</small>
+      </div>
+      <div class="card">
+        <h3>State-Affiliated Pvt.</h3>
+        <div class="big">100% Private</div>
+        <small>Top unaided private colleges affiliated to state technical universities.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TOP 10 ================= -->
+  <section class="block" id="top10">
+    <h2 class="sec-title">Top 10 B.Tech Colleges in India by Average Package (2026)</h2>
+    <p class="sec-sub">Highest mean average B.Tech placement packages across all states covered in this directory.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Top 10 Highest Average B.Tech Packages in India</caption>
+          <thead>
+            <tr>
+              <th scope="col">Rank</th>
+              <th scope="col">College / Institute</th>
+              <th scope="col">State</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIIT Hyderabad</td><td>Telangana</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹31.5 LPA</td></tr>
+            <tr><td>2</td><td class="name">IIIT Lucknow</td><td>Uttar Pradesh</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹30.5 LPA</td></tr>
+            <tr><td>3</td><td class="name">IIIT Bangalore</td><td>Karnataka</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹28.5 LPA</td></tr>
+            <tr><td>4</td><td class="name">IIT Kanpur</td><td>Uttar Pradesh</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹26.9 LPA</td></tr>
+            <tr><td>5</td><td class="name">IIIT Allahabad</td><td>Uttar Pradesh</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹25.8 LPA</td></tr>
+            <tr><td>6</td><td class="name">IIT (BHU) Varanasi</td><td>Uttar Pradesh</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹24.6 LPA</td></tr>
+            <tr><td>7</td><td class="name">IIT Hyderabad</td><td>Telangana</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹24.1 LPA</td></tr>
+            <tr><td>8</td><td class="name">IIT Bombay</td><td>Maharashtra</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹23.5 LPA</td></tr>
+            <tr><td>9</td><td class="name">IIT Madras</td><td>Tamil Nadu</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹22.0 LPA</td></tr>
+            <tr><td>10</td><td class="name">IIT Delhi</td><td>Delhi (NCT)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹21.5 LPA</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="note">*Figures are institutional mean average CTC in LPA and are indicative only. Actual offers vary by branch, year and market conditions.</p>
+  </section>
+
+  <!-- ================= 1. DELHI ================= -->
+  <section class="block" id="delhi">
+    <h2 class="sec-title">1. Delhi (NCT) — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">IIT Delhi, NIT Delhi, DTU, NSUT, IIIT-Delhi and top GGSIPU-affiliated private colleges.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Delhi (NCT) — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIT Delhi (Hauz Khas)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹21.5 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>2</td><td class="name">NIT Delhi (Narela)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹15.6 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>3</td><td class="name">Jamia Millia Islamia (JMI — FET), Okhla</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹9.5 LPA</td><td>JEE Main Paper-1</td></tr>
+            <tr><td>4</td><td class="name">Delhi Technological University (DTU), Rohini</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹15.8 LPA</td><td>JAC Delhi (JEE Main)</td></tr>
+            <tr><td>5</td><td class="name">Netaji Subhas Univ. of Tech. (NSUT), Dwarka</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹17.5 LPA</td><td>JAC Delhi (JEE Main)</td></tr>
+            <tr><td>6</td><td class="name">IGDTUW (Women), Kashmere Gate</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹14.2 LPA</td><td>JAC Delhi (JEE Main)</td></tr>
+            <tr><td>7</td><td class="name">USICT — GGSIPU, Dwarka</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹11.0 LPA</td><td>GGSIPU Counselling (JEE Main)</td></tr>
+            <tr><td>8</td><td class="name">USAR — GGSIPU, Surajmal Vihar (East Campus)</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹8.5 LPA</td><td>GGSIPU Counselling (JEE Main)</td></tr>
+            <tr><td>9</td><td class="name">IIIT-Delhi (Okhla Phase III)</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹19.8 LPA</td><td>JAC Delhi (JEE Main + Bonus)</td></tr>
+            <tr><td>10</td><td class="name">Maharaja Agrasen Inst. of Tech. (MAIT), Rohini</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.2 LPA</td><td>GGSIPU (85% Delhi / 15% OS) + MQ</td></tr>
+            <tr><td>11</td><td class="name">Maharaja Surajmal Inst. of Tech. (MSIT), Janakpuri</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.0 LPA</td><td>GGSIPU (85% Delhi / 15% OS) + MQ</td></tr>
+            <tr><td>12</td><td class="name">Bhagwan Parshuram Inst. of Tech. (BPIT), Rohini</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.5 LPA</td><td>GGSIPU (85% Delhi / 15% OS) + MQ</td></tr>
+            <tr><td>13</td><td class="name">Bharati Vidyapeeth's COE (BVCOE), Paschim Vihar</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.2 LPA</td><td>GGSIPU (85% Delhi / 15% OS) + MQ</td></tr>
+            <tr><td>14</td><td class="name">Dr. Akhilesh Das Gupta Inst. (ADGIPS / NIEC), Shastri Park</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.2 LPA</td><td>GGSIPU (85% Delhi / 15% OS) + MQ</td></tr>
+            <tr><td>15</td><td class="name">Guru Tegh Bahadur Inst. of Tech. (GTBIT), Rajouri Garden</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.5 LPA</td><td>GGSIPU Counselling + Sikh Minority</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. MAHARASHTRA ================= -->
+  <section class="block" id="maharashtra">
+    <h2 class="sec-title">2. Maharashtra — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">IIT Bombay, VNIT Nagpur, IIIT Pune/Nagpur, COEP, VJTI, ICT Mumbai, SPIT, PICT and more.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Maharashtra — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIT Bombay (Powai, Mumbai)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹23.5 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>2</td><td class="name">VNIT Nagpur</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹15.9 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>3</td><td class="name">IIIT Pune</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹13.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>4</td><td class="name">IIIT Nagpur</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹12.8 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>5</td><td class="name">COEP Technological University, Pune</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹12.8 LPA</td><td>MHT-CET + All-India JEE Quota</td></tr>
+            <tr><td>6</td><td class="name">VJTI Mumbai (Matunga)</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹13.5 LPA</td><td>MHT-CET State CAP (100% MH)</td></tr>
+            <tr><td>7</td><td class="name">Government College of Engineering (Aurangabad / Karad / Amravati)</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹6.8 LPA</td><td>MHT-CET State CAP Counselling</td></tr>
+            <tr><td>8</td><td class="name">ICT Mumbai (Matunga)</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹9.8 LPA</td><td>MHT-CET (70%) + JEE Main AIQ (30%)</td></tr>
+            <tr><td>9</td><td class="name">Sardar Patel College of Engg. (SPCE), Andheri</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹9.2 LPA</td><td>MHT-CET State CAP Counselling</td></tr>
+            <tr><td>10</td><td class="name">Walchand College of Engineering, Sangli</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹10.8 LPA</td><td>MHT-CET CAP + JEE Main AIQ</td></tr>
+            <tr><td>11</td><td class="name">SGGSIE&amp;T, Nanded</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹6.5 LPA</td><td>MHT-CET CAP + JEE Main AIQ</td></tr>
+            <tr><td>12</td><td class="name">MIT World Peace University (MIT-WPU), Pune</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹7.2 LPA</td><td>JEE Main / MHT-CET / PERA CET</td></tr>
+            <tr><td>13</td><td class="name">Symbiosis Inst. of Technology (SIT), Lavale, Pune</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹9.5 LPA</td><td>SITEEE / JEE Main / MHT-CET</td></tr>
+            <tr><td>14</td><td class="name">NMIMS MPSTME (Mumbai &amp; Shirpur)</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹8.5 LPA</td><td>NMIMS-CET / JEE Main</td></tr>
+            <tr><td>15</td><td class="name">K.J. Somaiya School of Engineering, Vidyavihar</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹9.4 LPA</td><td>JEE Main / MHT-CET / PERA CET</td></tr>
+            <tr><td>16</td><td class="name">Bharati Vidyapeeth COE, Dhankawadi, Pune</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹6.8 LPA</td><td>BVP CET / JEE Main</td></tr>
+            <tr><td>17</td><td class="name">D.Y. Patil Deemed Univ. (RAIT), Nerul, Navi Mumbai</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹6.5 LPA</td><td>DYPRAIT-ET / JEE Main / MHT-CET</td></tr>
+            <tr><td>18</td><td class="name">Army Institute of Technology (AIT), Dighi, Pune</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹12.5 LPA</td><td>100% JEE Main (Army Wards Only)</td></tr>
+            <tr><td>19</td><td class="name">Sardar Patel Inst. of Technology (SPIT), Andheri</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹15.1 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>20</td><td class="name">Pune Inst. of Computer Tech. (PICT), Dhankawadi</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹12.8 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>21</td><td class="name">Dwarkadas J. Sanghvi COE (DJSCE), Vile Parle</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹10.5 LPA</td><td>MHT-CET CAP + Gujarati Minority + ILS</td></tr>
+            <tr><td>22</td><td class="name">Thadomal Shahani Engg. College (TSEC), Bandra</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.8 LPA</td><td>MHT-CET CAP + Sindhi Minority + ILS</td></tr>
+            <tr><td>23</td><td class="name">VESIT Mumbai, Chembur</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.6 LPA</td><td>MHT-CET CAP + Sindhi Minority + ILS</td></tr>
+            <tr><td>24</td><td class="name">Vishwakarma Inst. of Tech. (VIT Pune), Bibwewadi</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.4 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>25</td><td class="name">Vishwakarma Inst. of Info. Tech. (VIIT), Kondhwa, Pune</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.5 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>26</td><td class="name">MKSSS's Cummins COE (Women), Karvenagar, Pune</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹11.2 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>27</td><td class="name">Pimpri Chinchwad COE (PCCOE), Nigdi, Pune</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.2 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>28</td><td class="name">D.Y. Patil COE (DYPCOE), Akurdi, Pune</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.4 LPA</td><td>65% MH CAP + 15% AIQ + 20% ILS</td></tr>
+            <tr><td>29</td><td class="name">Shri Ramdeobaba COE (RCOEM), Nagpur</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.8 LPA</td><td>MHT-CET CAP + Hindi Minority + ILS</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. UTTAR PRADESH ================= -->
+  <section class="block" id="uttar-pradesh">
+    <h2 class="sec-title">3. Uttar Pradesh — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">IIT Kanpur, IIT (BHU), MNNIT Allahabad, IIIT Allahabad, IIIT Lucknow, HBTU, JIIT, SNU and more.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Uttar Pradesh — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIT Kanpur</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹26.9 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>2</td><td class="name">IIT (BHU) Varanasi</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹24.6 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>3</td><td class="name">MNNIT Allahabad (Prayagraj)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹19.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>4</td><td class="name">IIIT Allahabad (Prayagraj)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹25.8 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>5</td><td class="name">Aligarh Muslim University (ZHCET), Aligarh</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹7.8 LPA</td><td>AMUEEE / JEE Main</td></tr>
+            <tr><td>6</td><td class="name">RGIPT Jais, Amethi (INI)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹10.7 LPA</td><td>JEE Advanced / JEE Main</td></tr>
+            <tr><td>7</td><td class="name">IIIT Lucknow (INI)</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹30.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>8</td><td class="name">HBTU Kanpur</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹9.3 LPA</td><td>HBTU Counselling (JEE Main)</td></tr>
+            <tr><td>9</td><td class="name">IET Lucknow (Jankipuram)</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹8.5 LPA</td><td>UPTAC Counselling (JEE Main)</td></tr>
+            <tr><td>10</td><td class="name">MMMUT Gorakhpur</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹7.2 LPA</td><td>MMMUT Counselling (JEE Main)</td></tr>
+            <tr><td>11</td><td class="name">KNIT Sultanpur</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹6.8 LPA</td><td>UPTAC Counselling (JEE Main)</td></tr>
+            <tr><td>12</td><td class="name">BIET Jhansi</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹6.4 LPA</td><td>UPTAC Counselling (JEE Main)</td></tr>
+            <tr><td>13</td><td class="name">University of Lucknow (FoET), Jankipuram</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹5.8 LPA</td><td>UPTAC Counselling (JEE Main)</td></tr>
+            <tr><td>14</td><td class="name">JIIT Noida (Sector 62 &amp; 128)</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹11.5 LPA</td><td>50% JEE Main + 50% Class 12 PCM</td></tr>
+            <tr><td>15</td><td class="name">Shiv Nadar University (SNU), Greater Noida (IoE)</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹11.3 LPA</td><td>SNUSAT + APT / JEE Main / SAT</td></tr>
+            <tr><td>16</td><td class="name">Amity School of Engg. &amp; Tech., Sector 125 Noida</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹7.5 LPA</td><td>JEE Main / Amity Entrance / XII Merit</td></tr>
+            <tr><td>17</td><td class="name">JSS Academy of Technical Education, Sector 62 Noida</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.4 LPA</td><td>85% UPTAC (JEE Main) + 15% Mgmt</td></tr>
+            <tr><td>18</td><td class="name">Ajay Kumar Garg Engg. College (AKGEC), Ghaziabad</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.5 LPA</td><td>85% UPTAC (JEE Main) + Mgmt</td></tr>
+            <tr><td>19</td><td class="name">KIET Group of Institutions, Ghaziabad</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.8 LPA</td><td>85% UPTAC (JEE Main) + Mgmt</td></tr>
+            <tr><td>20</td><td class="name">G.L. Bajaj Inst. of Tech. &amp; Mgmt., Greater Noida</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.3 LPA</td><td>85% UPTAC (JEE Main) + Mgmt</td></tr>
+            <tr><td>21</td><td class="name">ABES Engineering College, Ghaziabad</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.4 LPA</td><td>85% UPTAC (JEE Main) + Mgmt</td></tr>
+            <tr><td>22</td><td class="name">Noida Inst. of Engg. &amp; Tech. (NIET), Greater Noida</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.2 LPA</td><td>85% UPTAC (JEE Main) + 15% Mgmt</td></tr>
+            <tr><td>23</td><td class="name">Galgotias College of Engg. (GCET), Greater Noida</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.0 LPA</td><td>85% UPTAC (JEE Main) + Mgmt</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. KARNATAKA ================= -->
+  <section class="block" id="karnataka">
+    <h2 class="sec-title">4. Karnataka — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">NITK Surathkal, IIT Dharwad, IIIT Bangalore, RVCE, BMSCE, PES, Manipal and more.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Karnataka — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">NITK Surathkal, Mangaluru</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹17.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>2</td><td class="name">IIT Dharwad</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹16.5 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>3</td><td class="name">IIIT Dharwad</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹10.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>4</td><td class="name">IIIT Bangalore (Electronic City)</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹28.5 LPA</td><td>100% JEE Main CRL (Direct)</td></tr>
+            <tr><td>5</td><td class="name">UVCE Bengaluru (KR Circle)</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹9.8 LPA</td><td>KCET (Karnataka Domicile)</td></tr>
+            <tr><td>6</td><td class="name">UBDT College of Engineering, Davanagere</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹5.8 LPA</td><td>KCET (Karnataka Domicile)</td></tr>
+            <tr><td>7</td><td class="name">BMS College of Engineering (BMSCE), Basavanagudi</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹10.2 LPA</td><td>KCET (Aided/Govt) + COMEDK + Mgmt</td></tr>
+            <tr><td>8</td><td class="name">SJCE / JSSSTU Mysuru</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹9.5 LPA</td><td>KCET (Aided/Govt) + COMEDK + Mgmt</td></tr>
+            <tr><td>9</td><td class="name">National Inst. of Engineering (NIE), Mysuru</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹9.2 LPA</td><td>KCET (Aided/Govt) + COMEDK + Mgmt</td></tr>
+            <tr><td>10</td><td class="name">Manipal Inst. of Technology (MIT), Manipal — MAHE</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹10.5 LPA</td><td>100% MET (Manipal Entrance Test)</td></tr>
+            <tr><td>11</td><td class="name">PES University, Ring Road &amp; EC, Bengaluru</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹11.5 LPA</td><td>KCET + JEE Main / PESSAT + Mgmt</td></tr>
+            <tr><td>12</td><td class="name">R.V. College of Engineering (RVCE), Bengaluru</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹13.8 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>13</td><td class="name">M.S. Ramaiah Inst. of Tech. (MSRIT), Mathikere</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹10.8 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>14</td><td class="name">Siddaganga Inst. of Technology (SIT), Tumakuru</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.8 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>15</td><td class="name">Dayananda Sagar COE (DSCE), Bengaluru</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.6 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>16</td><td class="name">BMS Inst. of Tech. &amp; Mgmt. (BMSIT&amp;M), Yelahanka</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.8 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>17</td><td class="name">Bangalore Inst. of Technology (BIT), VV Puram</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.4 LPA</td><td>45% KCET + 30% COMEDK + 25% Mgmt</td></tr>
+            <tr><td>18</td><td class="name">Nitte Meenakshi Inst. of Tech. (NMIT), Yelahanka</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹6.8 LPA</td><td>NUCAT / KCET / COMEDK / JEE Main</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. TELANGANA ================= -->
+  <section class="block" id="telangana">
+    <h2 class="sec-title">5. Telangana — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">IIT Hyderabad, NIT Warangal, IIIT-Hyderabad, BITS Pilani Hyderabad, CBIT, VNR VJIET and more.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Telangana — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIT Hyderabad (Kandi, Sangareddy)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹24.1 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>2</td><td class="name">NIT Warangal</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹17.2 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>3</td><td class="name">University of Hyderabad (SEST), Gachibowli</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹9.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>4</td><td class="name">IIIT-Hyderabad, Gachibowli</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹31.5 LPA</td><td>JEE Main / UGEE / Olympiad</td></tr>
+            <tr><td>5</td><td class="name">JNTUH University COE, Kukatpally</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹8.5 LPA</td><td>TG EAPCET State Counselling</td></tr>
+            <tr><td>6</td><td class="name">Osmania University COE (UCE), Hyderabad</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹7.8 LPA</td><td>TG EAPCET State Counselling</td></tr>
+            <tr><td>7</td><td class="name">BITS Pilani — Hyderabad Campus</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹20.8 LPA</td><td>100% BITSAT All-India Merit</td></tr>
+            <tr><td>8</td><td class="name">Mahindra University, Bahadurpally</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹9.1 LPA</td><td>JEE Main Percentile / SAT</td></tr>
+            <tr><td>9</td><td class="name">Chaitanya Bharathi Inst. of Tech. (CBIT), Gandipet</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.4 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>10</td><td class="name">VNR Vignana Jyothi Inst. (VNR VJIET), Bachupally</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.2 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>11</td><td class="name">Vasavi College of Engineering, Ibrahimbagh</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.6 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>12</td><td class="name">Gokaraju Rangaraju Inst. (GRIET), Bachupally</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.2 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>13</td><td class="name">CVR College of Engineering, Ibrahimpatnam</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹7.5 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>14</td><td class="name">Keshav Memorial Inst. of Tech. (KMIT), Narayanguda</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹8.5 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+            <tr><td>15</td><td class="name">Vardhaman College of Engineering, Shamshabad</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.5 LPA</td><td>70% TG EAPCET + 30% Cat-B (JEE)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. TAMIL NADU ================= -->
+  <section class="block" id="tamil-nadu">
+    <h2 class="sec-title">6. Tamil Nadu — Best B.Tech Colleges &amp; Average Package</h2>
+    <p class="sec-sub">IIT Madras, NIT Trichy, Anna University CEG/MIT, PSG, VIT, SRM, Amrita, SSN and more.</p>
+
+    <div class="table-card">
+      <div class="table-scroll">
+        <table>
+          <caption>Tamil Nadu — B.Tech Colleges with Average Placement Package</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">College / Institute Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Avg. Package</th>
+              <th scope="col">Primary Admission Mode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td class="name">IIT Madras, Chennai</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹22.0 LPA</td><td>JEE Advanced (JoSAA)</td></tr>
+            <tr><td>2</td><td class="name">NIT Tiruchirappalli (NIT Trichy)</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹17.8 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>3</td><td class="name">IIITDM Kancheepuram, Chennai</td><td><span class="tag central">Central Govt.</span></td><td class="pkg">~₹11.2 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>4</td><td class="name">IIIT Tiruchirappalli</td><td><span class="tag semi">Semi-Govt. / PPP</span></td><td class="pkg">~₹10.5 LPA</td><td>JEE Main (JoSAA / CSAB)</td></tr>
+            <tr><td>5</td><td class="name">CEG — Anna University, Guindy, Chennai</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹8.6 LPA</td><td>TNEA Counselling (Class 12 PCM)</td></tr>
+            <tr><td>6</td><td class="name">MIT — Anna University, Chromepet, Chennai</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹8.2 LPA</td><td>TNEA Counselling (Class 12 PCM)</td></tr>
+            <tr><td>7</td><td class="name">Government College of Technology (GCT), Coimbatore</td><td><span class="tag state">State Govt.</span></td><td class="pkg">~₹6.8 LPA</td><td>TNEA Counselling (Class 12 PCM)</td></tr>
+            <tr><td>8</td><td class="name">PSG College of Technology, Peelamedu, Coimbatore</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹9.5 LPA</td><td>TNEA Counselling (Aided + Self)</td></tr>
+            <tr><td>9</td><td class="name">Thiagarajar College of Engg. (TCE), Madurai</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹7.8 LPA</td><td>TNEA Counselling (Aided + Self)</td></tr>
+            <tr><td>10</td><td class="name">Coimbatore Inst. of Technology (CIT), Coimbatore</td><td><span class="tag semi">Semi-Govt. / Aided</span></td><td class="pkg">~₹7.6 LPA</td><td>TNEA Counselling (Aided + Self)</td></tr>
+            <tr><td>11</td><td class="name">Vellore Institute of Technology (VIT), Vellore &amp; Chennai</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹9.2 LPA</td><td>100% VITEEE Central Counselling</td></tr>
+            <tr><td>12</td><td class="name">SRM Inst. of Science &amp; Tech. (SRMIST), Kattankulathur</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹7.1 LPA</td><td>SRMJEEE / JEE Main All-India</td></tr>
+            <tr><td>13</td><td class="name">Amrita Vishwa Vidyapeetham, Coimbatore &amp; Chennai</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹8.2 LPA</td><td>70% AEEE + 30% JEE Main</td></tr>
+            <tr><td>14</td><td class="name">SASTRA Deemed University, Thanjavur</td><td><span class="tag private">Private / Deemed Univ.</span></td><td class="pkg">~₹7.5 LPA</td><td>50% (JEE + XII) + 50% XII Marks</td></tr>
+            <tr><td>15</td><td class="name">Sri Sivasubramaniya Nadar (SSN) COE, Kalavakkam</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹10.5 LPA</td><td>65% TNEA (XII) + 35% Mgmt / SNUCEE</td></tr>
+            <tr><td>16</td><td class="name">Rajalakshmi Engineering College (REC), Thandalam</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.2 LPA</td><td>65% TNEA + 35% Management Quota</td></tr>
+            <tr><td>17</td><td class="name">Kumaraguru College of Tech. (KCT), Coimbatore</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.4 LPA</td><td>65% TNEA + 35% Management Quota</td></tr>
+            <tr><td>18</td><td class="name">Bannari Amman Inst. of Tech. (BIT), Sathyamangalam</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹6.1 LPA</td><td>65% TNEA + 35% Management Quota</td></tr>
+            <tr><td>19</td><td class="name">Kongu Engineering College (KEC), Perundurai, Erode</td><td><span class="tag affiliated">State-Affiliated Pvt.</span></td><td class="pkg">~₹5.8 LPA</td><td>65% TNEA + 35% Management Quota</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPANDING ================= -->
+  <section class="block">
+    <h2 class="sec-title">More States Coming Soon</h2>
+    <p class="sec-sub">This directory is being expanded institute-by-institute. Upcoming coverage:</p>
+    <div class="cards">
+      <div class="card"><h3>Andhra Pradesh</h3><div class="big">Coming Soon</div><small>IIT Tirupati, NIT AP, IIIT Sri City &amp; more</small></div>
+      <div class="card"><h3>West Bengal</h3><div class="big">Coming Soon</div><small>IIT KGP, NIT Durgapur, Jadavpur Univ. &amp; more</small></div>
+      <div class="card"><h3>Rajasthan</h3><div class="big">Coming Soon</div><small>IIT Jodhpur, MNIT Jaipur, BITS Pilani &amp; more</small></div>
+      <div class="card"><h3>Madhya Pradesh</h3><div class="big">Coming Soon</div><small>IIT Indore, MANIT Bhopal, IIITDM Jabalpur</small></div>
+      <div class="card"><h3>Gujarat</h3><div class="big">Coming Soon</div><small>IIT Gandhinagar, NIT Surat, DA-IICT &amp; more</small></div>
+      <div class="card"><h3>Punjab, Haryana, Bihar &amp; Jharkhand</h3><div class="big">Coming Soon</div><small>IIT Ropar, NIT Kurukshetra, IIT Patna, IIT ISM</small></div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="block" id="faq">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <p class="sec-sub">Common questions about B.Tech average packages and college selection.</p>
+
+    <details open>
+      <summary>Which B.Tech college has the highest average package in India?</summary>
+      <p>As per this directory, <strong>IIIT Hyderabad</strong> has the highest mean average B.Tech package at about <strong>₹31.5 LPA</strong>, followed by IIIT Lucknow (~₹30.5 LPA), IIIT Bangalore (~₹28.5 LPA) and IIT Kanpur (~₹26.9 LPA).</p>
+    </details>
+
+    <details>
+      <summary>What is the average package of IIT Delhi B.Tech?</summary>
+      <p>The overall mean average B.Tech placement package at <strong>IIT Delhi is approximately ₹21.5 LPA</strong> across all branches. CSE and IT branches typically report higher averages than the institute-wide mean.</p>
+    </details>
+
+    <details>
+      <summary>Are these average packages mean or median?</summary>
+      <p>All figures in this directory are <strong>Mean Average CTC (LPA)</strong> taken from institutional placement reports — <em>not median</em>. Mean averages are usually pulled upward by a small number of very high packages, so the median is often lower.</p>
+    </details>
+
+    <details>
+      <summary>Which state has the best B.Tech colleges in India?</summary>
+      <p>Maharashtra, Tamil Nadu, Karnataka, Uttar Pradesh, Telangana and Delhi NCT together host the largest concentration of high-package B.Tech institutes. IIT Bombay (Maharashtra) at ~₹23.5 LPA and IIT Madras (Tamil Nadu) at ~₹22.0 LPA lead their respective states.</p>
+    </details>
+
+    <details>
+      <summary>What is the average package of NIT Trichy?</summary>
+      <p><strong>NIT Tiruchirappalli (NIT Trichy)</strong> reports an overall mean average B.Tech package of approximately <strong>₹17.8 LPA</strong> — one of the highest among all NITs in India.</p>
+    </details>
+
+    <details>
+      <summary>Which is the best private B.Tech college in Maharashtra by package?</summary>
+      <p>Among state-affiliated private colleges in Maharashtra, <strong>Sardar Patel Institute of Technology (SPIT), Andheri</strong> leads with approximately <strong>₹15.1 LPA</strong>, followed by PICT Pune (~₹12.8 LPA) and DJSCE Mumbai (~₹10.5 LPA).</p>
+    </details>
+
+    <details>
+      <summary>Does a higher average package always mean a better college?</summary>
+      <p>No. Average package is only one signal. Also consider branch-wise placement, median package, number of students placed, recruiter quality, fee structure, location, faculty, and admission cut-offs before deciding.</p>
+    </details>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="block">
+    <div class="cta">
+      <h2>Compare Colleges Before You Choose</h2>
+      <p>Use our cutoff, fee and placement comparison tools to shortlist the right B.Tech college for your rank.</p>
+      <a class="btn" href="/college-predictor">Try the College Predictor</a>
+    </div>
+  </section>
+
+  <p class="note">
+    <strong>Disclaimer:</strong> Average package figures are compiled from publicly available institutional placement reports
+    and are indicative mean averages in LPA. They are not a guarantee of future placements and may vary by branch, batch and
+    market conditions. Verify official data with the respective institute before making admission decisions.
+  </p>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <h4>Your Website Name</h4>
+      <p>Independent guides on engineering admissions, cutoffs, fees and placement data across India.</p>
+    </div>
+    <div>
+      <h4>Popular Pages</h4>
+      <p><a href="/best-btech-colleges-india-state-wise-average-package">State-Wise B.Tech Directory</a><br>
+         <a href="/jee-main-cutoff">JEE Main Cutoffs</a><br>
+         <a href="/college-predictor">College Predictor</a></p>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <p><a href="/about">About</a> · <a href="/contact">Contact</a><br>
+         <a href="/privacy-policy">Privacy Policy</a> · <a href="/disclaimer">Disclaimer</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+```
