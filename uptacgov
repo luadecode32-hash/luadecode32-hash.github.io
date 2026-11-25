@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UPTAC Government B.Tech Colleges 2026: Fees, Rank & Packages</title>
+  <meta name="description" content="Complete rank-wise list of all UPTAC (AKTU) government engineering colleges, RECs & state universities in UP with real 4-year B.Tech fees and placement data.">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      color: #0f172a;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+    p.intro {
+      color: #475569;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    .info-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      color: #166534;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    thead {
+      background-color: #1e3a8a;
+      color: #ffffff;
+    }
+    th, td {
+      padding: 11px 13px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    tbody tr:hover {
+      background-color: #f1f5f9;
+    }
+    .rank-badge {
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .type-badge {
+      font-size: 12px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #334155;
+      white-space: nowrap;
+    }
+    .tag-muted {
+      font-size: 12.5px;
+      color: #64748b;
+      font-style: italic;
+    }
+    .note {
+      font-size: 13px;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 14px;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>All UPTAC Government B.Tech Colleges & State Universities: Rank, Fees & Placements</h1>
+  <p class="intro">
+    Complete preference-wise list of government engineering institutes, Rajkiya Engineering Colleges (RECs), and state university engineering faculties participating in <strong>UPTAC (AKTU) B.Tech Counselling</strong> through JEE Main scores.
+  </p>
+
+  <div class="info-box">
+    <strong>Important Note on Top UP State Universities:</strong><br>
+    • <strong>HBTU Kanpur</strong> (Avg: ~₹8.25 LPA | 4-Yr Fee: ~₹5.25L) and <strong>MMMUT Gorakhpur</strong> (Avg: ~₹6.0–7.0 LPA | 4-Yr Fee: ~₹3.6L) conduct their own separate counselling portals and are <strong>not</strong> filled via UPTAC.<br>
+    • <strong>Fee Waiver (FW) Seats:</strong> All UPTAC government colleges reserve 5% supernumerary TFW seats where 100% of the tuition fee is waived for eligible UP domicile students.
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Pref. Rank</th>
+          <th>Institute Name</th>
+          <th>Category</th>
+          <th>4-Yr Academic Fee (Approx.)</th>
+          <th>Median / Avg. Package</th>
+          <th>Highest Reported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-badge">#1</span></td>
+          <td>Institute of Engineering & Technology (IET), Lucknow</td>
+          <td><span class="type-badge">AKTU Constituent</span></td>
+          <td>₹3.44 – ₹4.04 Lakh</td>
+          <td>₹6.15 LPA (Median) / ₹8.20 LPA (Avg)</td>
+          <td>₹49.00 LPA (Off-campus)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#2</span></td>
+          <td>Kamla Nehru Institute of Technology (KNIT), Sultanpur</td>
+          <td><span class="type-badge">AKTU Autonomous</span></td>
+          <td>₹2.45 – ₹2.95 Lakh</td>
+          <td>₹4.80 – ₹6.50 LPA</td>
+          <td>₹45.00 LPA (Off-campus)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#3</span></td>
+          <td>Bundelkhand Institute of Engineering & Technology (BIET), Jhansi</td>
+          <td><span class="type-badge">AKTU Autonomous</span></td>
+          <td>₹2.45 – ₹2.70 Lakh</td>
+          <td>₹5.00 – ₹5.35 LPA</td>
+          <td>₹17.00 – ₹24.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#4</span></td>
+          <td>Faculty of Engineering & Technology, University of Lucknow</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹4.81 – ₹4.87 Lakh</td>
+          <td>₹4.50 – ₹5.50 LPA</td>
+          <td>₹23.61 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#5</span></td>
+          <td>Dr. Ambedkar Institute of Technology for Divyangjan (AITH), Kanpur</td>
+          <td><span class="type-badge">Govt. Autonomous</span></td>
+          <td>₹2.60 – ₹2.88 Lakh</td>
+          <td>₹4.50 LPA</td>
+          <td>₹19.75 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#6</span></td>
+          <td>Rajkiya Engineering College (REC), Sonbhadra</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹1.62 – ₹2.14 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA</td>
+          <td>₹12.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#7</span></td>
+          <td>Rajkiya Engineering College (REC), Banda</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹1.99 – ₹2.27 Lakh</td>
+          <td>₹3.36 – ₹4.00 LPA</td>
+          <td>₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#8</span></td>
+          <td>Rajkiya Engineering College (REC), Ambedkar Nagar</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹2.14 – ₹2.50 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA</td>
+          <td>₹12.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#9</span></td>
+          <td>Rajkiya Engineering College (REC), Bijnor</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹1.65 – ₹2.20 Lakh</td>
+          <td>₹3.50 – ₹4.00 LPA</td>
+          <td>₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#10</span></td>
+          <td>Rajkiya Engineering College (REC), Azamgarh</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹2.10 – ₹2.40 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA</td>
+          <td>₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#11</span></td>
+          <td>Rajkiya Engineering College (REC), Kannauj</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹1.80 – ₹2.20 Lakh</td>
+          <td>₹3.20 – ₹3.80 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#12</span></td>
+          <td>Rajkiya Engineering College (REC), Mainpuri</td>
+          <td><span class="type-badge">Govt. REC (AKTU)</span></td>
+          <td>₹1.94 – ₹2.25 Lakh</td>
+          <td>₹3.20 – ₹3.80 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#13</span></td>
+          <td>Uttar Pradesh Textile Technology Institute (UPTTI), Kanpur</td>
+          <td><span class="type-badge">Govt. Specialized</span></td>
+          <td>₹1.73 – ₹2.50 Lakh</td>
+          <td>₹4.00 – ₹4.80 LPA</td>
+          <td>₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#14</span></td>
+          <td>Indian Institute of Carpet Technology (IICT), Bhadohi</td>
+          <td><span class="type-badge">Central/State Specialized</span></td>
+          <td>₹2.20 – ₹2.60 Lakh</td>
+          <td>₹3.50 – ₹4.50 LPA</td>
+          <td>₹8.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#15</span></td>
+          <td>Deen Dayal Upadhyaya (DDU) Gorakhpur University, Gorakhpur</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.80 – ₹3.20 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA</td>
+          <td>₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#16</span></td>
+          <td>Sir Chhotu Ram Institute of Engg. & Tech. (SCRIET - CCSU), Meerut</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.80 – ₹3.10 Lakh</td>
+          <td>₹3.20 – ₹4.00 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#17</span></td>
+          <td>Bundelkhand University (BU), Jhansi</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹3.00 – ₹3.40 Lakh</td>
+          <td>₹3.00 – ₹3.80 LPA</td>
+          <td>₹8.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#18</span></td>
+          <td>M.J.P. Rohilkhand University (MJPRU), Bareilly</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.80 – ₹3.20 Lakh</td>
+          <td>₹3.20 – ₹4.00 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#19</span></td>
+          <td>Veer Bahadur Singh Purvanchal University (VBSPU), Jaunpur</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.40 – ₹2.70 Lakh</td>
+          <td>₹3.00 – ₹3.60 LPA</td>
+          <td>₹7.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#20</span></td>
+          <td>Dr. Rammanohar Lohia Avadh University (RMLAU), Ayodhya</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.60 – ₹3.00 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#21</span></td>
+          <td>Dr. Bhimrao Ambedkar University (IET Agra), Agra</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.80 – ₹3.10 Lakh</td>
+          <td>₹3.00 – ₹3.60 LPA</td>
+          <td>₹8.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#22</span></td>
+          <td>Dr. Shakuntala Misra National Rehabilitation University (DSMNRU), Lucknow</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.60 – ₹3.00 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#23</span></td>
+          <td>Khwaja Moinuddin Chishti Language University (KMCLU), Lucknow</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.40 – ₹2.80 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#24</span></td>
+          <td>Mahamaya College of Agricultural Engg. & Tech. (ANDUAT), Ambedkar Nagar</td>
+          <td><span class="type-badge">State Agri. Univ.</span></td>
+          <td>₹1.80 – ₹2.20 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹6.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#25</span></td>
+          <td>Baba Saheb Dr. B.R. Ambedkar College of Agri. Engg. (CSAUAT), Etawah</td>
+          <td><span class="type-badge">State Agri. Univ.</span></td>
+          <td>₹1.80 – ₹2.20 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹6.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#26</span></td>
+          <td>Sardar Vallabhbhai Patel University of Agriculture & Tech. (SVPUAT), Meerut</td>
+          <td><span class="type-badge">State Agri. Univ.</span></td>
+          <td>₹2.00 – ₹2.40 Lakh</td>
+          <td>₹3.00 – ₹3.50 LPA</td>
+          <td>₹6.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#27</span></td>
+          <td>Maa Pateshwari Devi Rajkiya Engineering College, Gonda</td>
+          <td><span class="type-badge">New Govt. REC</span></td>
+          <td>₹2.10 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">New Campus (No Graduated Batch Yet)</span></td>
+          <td><span class="tag-muted">N/A</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#28</span></td>
+          <td>Rajkiya Engineering College (REC), Basti</td>
+          <td><span class="type-badge">New Govt. REC</span></td>
+          <td>₹2.10 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">New Campus (No Graduated Batch Yet)</span></td>
+          <td><span class="tag-muted">N/A</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#29</span></td>
+          <td>Rajkiya Engineering College (REC), Mirzapur</td>
+          <td><span class="type-badge">New Govt. REC</span></td>
+          <td>₹2.10 – ₹2.47 Lakh</td>
+          <td><span class="tag-muted">New Campus (No Graduated Batch Yet)</span></td>
+          <td><span class="tag-muted">N/A</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#30</span></td>
+          <td>Rajkiya Engineering College (REC), Pratapgarh</td>
+          <td><span class="type-badge">New Govt. REC</span></td>
+          <td>₹2.10 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">New Campus (No Graduated Batch Yet)</span></td>
+          <td><span class="tag-muted">N/A</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Reality Check & Counselling Tips:</strong><br>
+    1. <strong>Fee Breakdown:</strong> In UP Rajkiya Engineering Colleges (RECs), the official tuition fee is ~₹40,000/year plus ~₹12,300 user charges and ~₹7,500 AKTU university exam/registration fees (~₹60,000/year total, or ~₹2.2–₹2.4 Lakh for 4 years excluding hostel/mess).<br>
+    2. <strong>UP Scholarship:</strong> Eligible UP domicile students with family income under ₹2 Lakh (Gen/OBC/Min) or ₹2.5 Lakh (SC/ST) get full tuition fee reimbursement via the UP Post-Matric Scholarship.<br>
+    3. <strong>Branch vs. College:</strong> For CSE/IT aspirants, <strong>IET Lucknow, KNIT Sultanpur, BIET Jhansi, and Lucknow University</strong> have strong on-campus tech placements. In older RECs (Sonbhadra, Banda, Ambedkar Nagar, Bijnor, Azamgarh), core/mass IT recruiters (TCS, Wipro, Infosys, HCL) and GATE preparation drive most outcomes.
+  </div>
+</div>
+
+</body>
+</html>
