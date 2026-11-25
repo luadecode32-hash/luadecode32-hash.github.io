@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REAP Government B.Tech Colleges 2026: Fees, Rank & Packages</title>
+  <meta name="description" content="Complete rank-wise list of all 18 REAP government engineering colleges & state universities in Rajasthan with real GAS/SFS 4-year fees and placement data.">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      color: #0f172a;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+    p.intro {
+      color: #475569;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    .info-box {
+      background: #fefce8;
+      border: 1px solid #fde047;
+      padding: 14px 18px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      font-size: 14px;
+      color: #713f12;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    thead {
+      background-color: #1e3a8a;
+      color: #ffffff;
+    }
+    th, td {
+      padding: 11px 13px;
+      text-align: left;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    tbody tr:hover {
+      background-color: #f1f5f9;
+    }
+    .rank-badge {
+      background-color: #dbeafe;
+      color: #1e3a8a;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .type-badge {
+      font-size: 12px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #334155;
+      white-space: nowrap;
+    }
+    .tag-muted {
+      font-size: 12.5px;
+      color: #64748b;
+      font-style: italic;
+    }
+    .note {
+      font-size: 13px;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 14px;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>All REAP Government B.Tech Colleges in Rajasthan: Rank, Real Fees & Placements</h1>
+  <p class="intro">
+    Complete preference-wise list of all state government engineering colleges, autonomous societies, and state university departments participating in <strong>REAP (Rajasthan Engineering Admission Process)</strong> via JEE Main and Class 12 merit.
+  </p>
+
+  <div class="info-box">
+    <strong>How Rajasthan Govt. Engineering Fees Work (GAS vs. SFS):</strong><br>
+    • <strong>GAS (Government Aided Seats) / TFWS:</strong> Subsidized seats costing roughly <strong>₹60,000 – ₹1.40 Lakh</strong> for the entire 4-year degree (even lower for Girls & SC/ST).<br>
+    • <strong>SFS (Self-Financed Seats):</strong> Most CSE/IT and general seats in Rajasthan govt. colleges fall under SFS, costing roughly <strong>₹2.20 – ₹3.70 Lakh</strong> total for 4 years (excluding optional hostel/mess).
+  </div>
+
+  <div class="table-responsive">
+    <table>
+      <thead>
+        <tr>
+          <th>Pref. Rank</th>
+          <th>Institute Name</th>
+          <th>University / Type</th>
+          <th>4-Yr Academic Fee (GAS / SFS)</th>
+          <th>Median / Avg. Package</th>
+          <th>Highest Reported</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="rank-badge">#1</span></td>
+          <td>MBM University (formerly MBM Engineering College), Jodhpur</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹65,000 (GAS) / ₹2.00 – ₹2.40L (SFS)</td>
+          <td>₹6.00 LPA (NIRF Median) / ₹6.58L (Avg)</td>
+          <td>₹20.71 LPA (Core/Tech)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#2</span></td>
+          <td>College of Technology and Engineering (CTAE - MPUAT), Udaipur</td>
+          <td><span class="type-badge">State Univ. Constituent</span></td>
+          <td>₹1.40L (GAS) / ₹3.20 – ₹3.68L (SFS)</td>
+          <td>₹5.50 LPA (NIRF Median) / ₹5.00L (Avg)</td>
+          <td>₹13.00 – ₹18.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#3</span></td>
+          <td>University Teaching Department (UTD), RTU Kota</td>
+          <td><span class="type-badge">State Tech. University</span></td>
+          <td>₹95,000 (GAS) / ₹2.90 – ₹3.20L (SFS)</td>
+          <td>₹5.24 – ₹7.00 LPA (NIRF Median)</td>
+          <td>₹33.00 LPA (Off-campus)</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#4</span></td>
+          <td>Engineering College, Ajmer (ECA)</td>
+          <td><span class="type-badge">Govt. Autonomous (BTU)</span></td>
+          <td>₹1.96 – ₹3.16 Lakh (SFS)</td>
+          <td>₹4.00 – ₹5.00 LPA</td>
+          <td>₹10.20 – ₹12.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#5</span></td>
+          <td>Engineering College, Bikaner (ECB)</td>
+          <td><span class="type-badge">Govt. Autonomous (BTU)</span></td>
+          <td>₹1.96 – ₹2.80 Lakh (SFS)</td>
+          <td>₹3.80 – ₹4.50 LPA</td>
+          <td>₹9.00 – ₹11.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#6</span></td>
+          <td>Government Mahila Engineering College (GWECA), Ajmer <em>(Girls Only)</em></td>
+          <td><span class="type-badge">Govt. Autonomous (BTU)</span></td>
+          <td>₹1.96 – ₹2.60 Lakh (SFS)</td>
+          <td>₹3.80 – ₹4.50 LPA</td>
+          <td>₹8.50 – ₹10.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#7</span></td>
+          <td>University College of Engineering & Technology (UCET), BTU Bikaner</td>
+          <td><span class="type-badge">State Tech. University</span></td>
+          <td>₹2.40 – ₹3.20 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA</td>
+          <td>₹9.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#8</span></td>
+          <td>M.L.V. Textile & Engineering College (MLVTEC), Bhilwara</td>
+          <td><span class="type-badge">Govt. Autonomous (RTU)</span></td>
+          <td>₹1.80 – ₹2.50 Lakh</td>
+          <td>₹3.60 – ₹4.50 LPA (Strong in Textile)</td>
+          <td>₹10.00 – ₹12.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#9</span></td>
+          <td>Government Engineering College (GEC), Bharatpur</td>
+          <td><span class="type-badge">Govt. Society (RTU)</span></td>
+          <td>₹1.96 – ₹2.40 Lakh</td>
+          <td>₹3.20 – ₹3.80 LPA</td>
+          <td>₹7.20 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#10</span></td>
+          <td>Government Engineering College (GEC), Jhalawar</td>
+          <td><span class="type-badge">Govt. Society (RTU)</span></td>
+          <td>₹1.96 – ₹2.40 Lakh</td>
+          <td>₹3.00 – ₹3.60 LPA</td>
+          <td>₹6.80 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#11</span></td>
+          <td>Faculty of Engineering, Mohanlal Sukhadia University (MLSU), Udaipur</td>
+          <td><span class="type-badge">State University</span></td>
+          <td>₹2.40 – ₹2.80 Lakh</td>
+          <td>₹3.00 – ₹3.60 LPA</td>
+          <td>₹7.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#12</span></td>
+          <td>CIPET: Institute of Petrochemicals Technology (IPT), Jaipur</td>
+          <td><span class="type-badge">Central/State Govt. (RTU)</span></td>
+          <td>₹2.20 – ₹2.60 Lakh</td>
+          <td>₹3.50 – ₹4.20 LPA (Plastics/Mfg)</td>
+          <td>₹7.50 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#13</span></td>
+          <td>Government Engineering College (GEC), Banswara</td>
+          <td><span class="type-badge">Govt. Society (RTU)</span></td>
+          <td>₹1.96 – ₹2.30 Lakh</td>
+          <td>₹2.80 – ₹3.40 LPA (Pool/Campus)</td>
+          <td>₹6.00 LPA</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#14</span></td>
+          <td>Government Engineering College (GEC), Baran</td>
+          <td><span class="type-badge">Govt. Society (RTU)</span></td>
+          <td>₹1.96 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">Pool Drive / Off-Campus (~₹3 LPA)</span></td>
+          <td><span class="tag-muted">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#15</span></td>
+          <td>Government Engineering College (GEC), Barmer</td>
+          <td><span class="type-badge">Govt. Society (BTU)</span></td>
+          <td>₹1.96 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">Pool Drive / Off-Campus (~₹3 LPA)</span></td>
+          <td><span class="tag-muted">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#16</span></td>
+          <td>Government Engineering College (GEC), Dholpur</td>
+          <td><span class="type-badge">Govt. Society (BTU)</span></td>
+          <td>₹1.96 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">Pool Drive / Off-Campus (~₹3 LPA)</span></td>
+          <td><span class="tag-muted">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#17</span></td>
+          <td>Government Engineering College (GEC), Karauli</td>
+          <td><span class="type-badge">Govt. Society (RTU)</span></td>
+          <td>₹1.96 – ₹2.30 Lakh</td>
+          <td><span class="tag-muted">Pool Drive / Off-Campus (~₹3 LPA)</span></td>
+          <td><span class="tag-muted">Not Formally Published</span></td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">#18</span></td>
+          <td>College of Engineering, Agriculture University, Jodhpur</td>
+          <td><span class="type-badge">State Agri. University</span></td>
+          <td>₹1.60 – ₹1.96 Lakh</td>
+          <td><span class="tag-muted">Agri-Tech / Off-Campus</span></td>
+          <td><span class="tag-muted">Not Formally Published</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Key REAP Counselling & Reality Notes:</strong><br>
+    1. <strong>MNIT Jaipur & IIT Jodhpur Excluded:</strong> Centrally funded institutes (MNIT Jaipur, IIT Jodhpur, IIIT Kota) do <em>not</em> participate in REAP; they admit students exclusively via JoSAA/CSAB.<br>
+    2. <strong>Out-of-State Students:</strong> 15% of seats in REAP government colleges are open to candidates outside Rajasthan based purely on JEE Main rank.<br>
+    3. <strong>Best ROI Picks:</strong> <strong>MBM Jodhpur</strong> (especially CSE, IT, Mining, Electrical), <strong>CTAE Udaipur</strong> (CSE, Mining, Agriculture Engg.), and <strong>RTU Kota</strong> (CSE, Petrochemical) have the strongest alumni networks and PSU/core recruitment among Rajasthan state colleges.
+  </div>
+</div>
+
+</body>
+</html>
+                                                                                                                                                                 
