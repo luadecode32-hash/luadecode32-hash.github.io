@@ -1,26 +1,112 @@
-name: Generate Sitemap Automatically
+name: Auto Sitemap & Google Indexing
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, master ]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  sitemap_job:
+  sitemap-and-index:
     runs-on: ubuntu-latest
-    name: Generate Sitemap
     steps:
-      - name: Checkout Code
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Generate Sitemap
-        uses: cicirello/generate-sitemap@v1
         with:
-          base-url-path: https://www.androidmodsarena.indevs.in/
+          fetch-depth: 2
 
-      - name: Commit and Push Sitemap
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          commit_message: "Automated sitemap generation by bot"
-          file_pattern: 'sitemap.xml'
-          
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-auth requests
+
+      - name: Update Sitemap & Submit to Google Indexing API
+        env:
+          GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
+          SITE_URL: "https://www.androidmodsarena.indevs.in"
+        run: |
+          python - << 'EOF'
+          import os, json, glob, subprocess, urllib.parse
+          import requests
+          from google.oauth2 import service_account
+          from google.auth.transport.requests import Request
+
+          site_url = os.environ["SITE_URL"].rstrip("/")
+
+          # 1. Saari HTML files scan karein (Google verification file ko chhod kar)
+          html_files = sorted([
+              f for f in glob.glob("*.html")
+              if not f.startswith("google")
+          ])
+
+          # 2. Sitemap.xml generate karein
+          urls = [f"{site_url}/"]
+          for f in html_files:
+              if f != "index.html":
+                  encoded_name = urllib.parse.quote(f)
+                  urls.append(f"{site_url}/{encoded_name}")
+
+          sitemap_lines = [
+              '<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+          ]
+          for u in urls:
+              sitemap_lines.append(f"  <url>\n    <loc>{u}</loc>\n  </url>")
+          sitemap_lines.append("</urlset>\n")
+
+          with open("sitemap.xml", "w", encoding="utf-8") as sm:
+              sm.write("\n".join(sitemap_lines))
+
+          # 3. Sirf naye ya badle hue pages nikaalein
+          try:
+              diff_out = subprocess.check_output(
+                  ["git", "diff", "--name-only", "HEAD~1", "HEAD"]
+              ).decode("utf-8").splitlines()
+              changed_files = [
+                  f for f in diff_out
+                  if f.endswith(".html") and not f.startswith("google") and os.path.exists(f)
+              ]
+          except Exception:
+              changed_files = html_files
+
+          if not changed_files:
+              print("Koi naya HTML page change nahi hua.")
+              exit(0)
+
+          # 4. Google Indexing API ko URL bhejein
+          creds_dict = json.loads(os.environ["GOOGLE_INDEXING_KEY"])
+          credentials = service_account.Credentials.from_service_account_info(
+              creds_dict,
+              scopes=["https://www.googleapis.com/auth/indexing"]
+          )
+          credentials.refresh(Request())
+
+          headers = {
+              "Authorization": f"Bearer {credentials.token}",
+              "Content-Type": "application/json"
+          }
+
+          for f in changed_files:
+              page_url = f"{site_url}/" if f == "index.html" else f"{site_url}/{urllib.parse.quote(f)}"
+              res = requests.post(
+                  "https://indexing.googleapis.com/v3/urlNotifications:publish",
+                  headers=headers,
+                  json={"url": page_url, "type": "URL_UPDATED"}
+              )
+              print(f"Submitted: {page_url} | Status: {res.status_code}")
+          EOF
+
+      - name: Commit updated sitemap.xml
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git diff --staged --quiet || git commit -m "Auto-update sitemap.xml [skip ci]"
+          git push
