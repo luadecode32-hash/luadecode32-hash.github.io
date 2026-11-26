@@ -1,47 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Mobile Drawer Navigation
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-  const closeDrawerBtn = document.getElementById('close-drawer-btn');
-  const mobileDrawer = document.getElementById('mobile-drawer');
-  const drawerOverlay = document.getElementById('drawer-overlay');
-  const drawerLinks = document.querySelectorAll('.drawer-link');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Mobile Hamburger Menu Toggle
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-  function openDrawer() {
-    mobileDrawer.classList.add('open');
-    drawerOverlay.classList.add('active');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Kisi bhi menu link par click hone par drawer band karein
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
   }
 
-  function closeDrawer() {
-    mobileDrawer.classList.remove('open');
-    drawerOverlay.classList.remove('active');
-  }
+  // 2. Live Homepage Search Filter
+  const searchInput = document.getElementById("siteSearch");
+  const searchableItems = document.querySelectorAll(".searchable-item");
 
-  if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
-  if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
-  if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
 
-  drawerLinks.forEach(link => {
-    link.addEventListener('click', closeDrawer);
-  });
-
-  // CTA Form Handler
-  const subscribeForm = document.getElementById('subscribe-form');
-  const emailInput = document.getElementById('email-input');
-  const formMessage = document.getElementById('form-message');
-
-  if (subscribeForm) {
-    subscribeForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = emailInput.value.trim();
-
-      if (email) {
-        formMessage.style.color = '#22c55e';
-        formMessage.textContent = 'Thank you for subscribing!';
-        emailInput.value = '';
-      } else {
-        formMessage.style.color = '#ef4444';
-        formMessage.textContent = 'Please enter a valid email address.';
-      }
+      searchableItems.forEach((item) => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
     });
   }
 });
