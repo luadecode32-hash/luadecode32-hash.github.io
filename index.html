@@ -3,200 +3,555 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AndroidsModArena| Get Data Of Any type of College And apps </title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google Site Verification Tag (Replace content with your GSC code) -->
-  <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE_HERE" />
+  <title>Androidsmodarena – Lua Decryption Tools, Mod APKs & Engineering College Guides</title>
+  <meta name="description" content="Androidsmodarena is your all-in-one hub for online Lua decryption tools, verified Android Mod APKs, and complete Indian engineering college admission & cutoff guides." />
+  <meta name="keywords" content="Androidsmodarena, Lua decrypt tool, Mod APKs, Android mods, engineering colleges India, BCECE colleges, UPTAC, REAP, GL Bajaj" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.androidmodsarena.indevs.in/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Androidsmodarena – Lua Tools, Mod APKs & College Guides" />
+  <meta property="og:description" content="Explore free Lua decryption tools, Android Mod APKs, and top engineering college guides across India." />
+  <meta property="og:url" content="https://www.androidmodsarena.indevs.in/" />
+  <meta property="og:site_name" content="Androidsmodarena" />
+
+  <!-- Google Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Androidsmodarena",
+    "url": "https://www.androidmodsarena.indevs.in/",
+    "description": "Free Lua script decryption tools, Android Mod APKs, and Indian engineering college admission guides.",
+    "sameAs": [
+      "https://youtube.com/@modnexusapk?si=yvfL3LLUsvT85KG0",
+      "https://t.me/RootModArena",
+      "https://t.me/HackAndModsChat"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #131a2a;
+      --surface-hover: #1b253b;
+      --border: #24304a;
+      --primary: #00e5a0;
+      --primary-dark: #00b880;
+      --accent: #38bdf8;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* Navbar & Hamburger */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      transition: 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      gap: 12px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.03);
+      font-weight: 500;
+    }
+    .mobile-menu a:hover { background: var(--surface-hover); color: var(--primary); }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1180px;
+      margin: auto;
+      padding: 56px 20px 36px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(0, 229, 160, 0.12);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      border: 1px solid rgba(0, 229, 160, 0.3);
+    }
+    .hero h1 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    /* Social CTA Buttons */
+    .social-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      padding: 11px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .btn:hover { transform: translateY(-2px); opacity: 0.92; }
+    .btn-primary { background: var(--primary); color: #06120e; }
+    .btn-tg { background: #229ED9; color: #fff; }
+    .btn-yt { background: #ef4444; color: #fff; }
+    .btn-outline { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+
+    /* Search & Filter Box */
+    .search-wrap {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    #siteSearch {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+    }
+    #siteSearch:focus { border-color: var(--primary); }
+
+    /* Sections & Grid */
+    main { max-width: 1180px; margin: auto; padding: 10px 20px 60px; }
+    .section-block { margin-top: 48px; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+    .section-header h2 { font-size: 1.45rem; }
+    .section-header span { font-size: 0.85rem; color: var(--muted); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s;
+    }
+    .card:hover {
+      background: var(--surface-hover);
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .card h3 { font-size: 1.12rem; margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; }
+    .card-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* All Pages SEO Directory */
+    .directory-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 52px;
+    }
+    .directory-box h2 { font-size: 1.3rem; margin-bottom: 12px; }
+    .directory-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .directory-links a {
+      padding: 8px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      transition: 0.2s;
+    }
+    .directory-links a:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #080b12;
+      padding: 40px 20px 24px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .footer-grid {
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+    .footer-grid h4 { color: var(--text); margin-bottom: 12px; font-size: 1rem; }
+    .footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-grid a:hover { color: var(--primary); }
+    .copyright {
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
+  <!-- Header & Hamburger Menu -->
+  <header>
     <div class="nav-container">
-      <a href="#" class="logo">Android<span>ModArena</span></a>
-      
-      <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact" class="btn-nav">Get Started</a>
+      <a href="/" class="brand">Androidsmodarena</a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#main-menu">Main Menu</a>
+        <a href="#lua-tools">Lua Tool Section</a>
+        <a href="#mod-apks">Mod APKs</a>
+        <a href="#college-section">College Section</a>
+        <a href="#others">Others</a>
       </nav>
 
-      <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+      <button class="hamburger" id="menuToggle" aria-label="Open Menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#main-menu">1) Main Menu</a>
+      <a href="#lua-tools">2) Lua Tool Section</a>
+      <a href="#mod-apks">3) Mod APKs</a>
+      <a href="#college-section">4) College Section</a>
+      <a href="#others">5) Others & All Pages</a>
+    </div>
   </header>
 
-  <!-- Side Drawer Menu for Mobile -->
-  <aside class="drawer" id="mobile-drawer">
-    <div class="drawer-header">
-      <span class="logo">AndroidModArena<span>Indevs</span></span>
-      <button class="close-btn" id="close-drawer-btn" aria-label="Close Menu">&times;</button>
-    </div>
-    <nav class="drawer-links">
-      <a href="#features" class="drawer-link">Features</a>
-      <a href="#solutions" class="drawer-link">Solutions</a>
-      <a href="#testimonials" class="drawer-link">Testimonials</a>
-      <a href="#contact" class="btn-drawer drawer-link">Get Started</a>
-    </nav>
-  </aside>
-  <div class="drawer-overlay" id="drawer-overlay"></div>
-
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-container">
-      <div class="hero-text">
-        <span class="badge">Get Every Type of Knowledge Here</span>
-        <h1>Engineered for Speed, Scaled for Growth</h1>
-        <p>Deploy high-performance web systems with modular architecture, responsive designs, and seamless integrations.</p>
-        <div class="hero-btns">
-          <a href="#contact" class="btn-primary">Get Started Free</a>
-          <a href="#features" class="btn-secondary">Explore Platform</a>
-        </div>
+  <section class="hero" id="main-menu">
+    <span class="badge">Tools • Android Mods • College Guides</span>
+    <h1>Welcome to Androidsmodarena</h1>
+    <p>
+      Your trusted hub for fast online Lua script decryption tools, verified Android Mod APKs, and complete Indian engineering college admission &amp; cutoff guides.
+    </p>
+
+    <div class="social-bar">
+      <a href="https://youtube.com/@modnexusapk?si=yvfL3LLUsvT85KG0" target="_blank" rel="noopener" class="btn btn-yt">YouTube (@modnexusapk)</a>
+      <a href="https://t.me/RootModArena" target="_blank" rel="noopener" class="btn btn-tg">Telegram Channel</a>
+      <a href="https://t.me/HackAndModsChat" target="_blank" rel="noopener" class="btn btn-primary">TG Help Group</a>
+      <a href="mailto:luadecode@gmail.com" class="btn btn-outline">Contact: luadecode@gmail.com</a>
+    </div>
+
+    <div class="search-wrap">
+      <input type="search" id="siteSearch" placeholder="Search tools, mods, or colleges (e.g., Lua, GL Bajaj, BCECE, IIT)..." aria-label="Search site pages" />
+    </div>
+  </section>
+
+  <main>
+
+    <!-- 2) Lua Tool Section -->
+    <section class="section-block" id="lua-tools">
+      <div class="section-header">
+        <h2>Lua Tool Section</h2>
+        <span>Script &amp; Reverse Engineering Utilities</span>
       </div>
-      <div class="hero-visual">
-        <div class="code-card">
-          <div class="card-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
-            <span class="card-title">app.config.js</span>
+      <div class="grid">
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Featured Tool</div>
+            <h3>Online Lua Decryptor</h3>
+            <p>Decrypt and decompile encrypted Lua scripts cleanly directly in your browser without installing extra software.</p>
           </div>
-          <pre><code><span class="keyword">const</span> apex = <span class="keyword">require</span>(<span class="string">'@apex/core'</span>);
+          <a href="decrypt-lua.html" class="card-link">Open Lua Tool &rarr;</a>
+        </article>
 
-<span class="comment">// Initialize application</span>
-<span class="keyword">const</span> app = apex.createApp({
-  mode: <span class="string">'production'</span>,
-  performance: <span class="string">'ultra'</span>,
-  responsive: <span class="keyword">true</span>
-});
-
-app.deploy();</code></pre>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Grid Section -->
-  <section id="features" class="features">
-    <div class="section-container">
-      <div class="section-title">
-        <h2>Built for High Performance</h2>
-        <p>Everything you need to ship faster, cleaner, and more reliable applications.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Ultra Fast Deployment</h3>
-          <p>Instant edge delivery ensuring lightning-fast response times globally across all devices.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📱</div>
-          <h3>100% Mobile Responsive</h3>
-          <p>Designed mobile-first to guarantee smooth browsing across phones, tablets, and desktops.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Enterprise Security</h3>
-          <p>Built-in SSL, encrypted pipelines, and active threat detection to protect critical data.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🛠️</div>
-          <h3>Modular Codebase</h3>
-          <p>Clean HTML, modular CSS, and lightweight JS structured for effortless maintenance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions Section -->
-  <section id="solutions" class="solutions">
-    <div class="section-container">
-      <div class="solutions-row">
-        <div class="solutions-content">
-          <h2>Tailored Solutions for Modern Workflows</h2>
-          <p>Stop wrestling with complex boilerplate code. Apex Dynamics gives you clear, production-ready structures out of the box.</p>
-          <ul class="solutions-list">
-            <li>✓ Custom UI design components</li>
-            <li>✓ SEO-optimized markup structure</li>
-            <li>✓ Optimized core web vitals performance</li>
-          </ul>
-        </div>
-        <div class="solutions-card">
-          <h3>Launch Ready Setup</h3>
-          <p>Upload directly to GitHub Pages or Cloudflare with zero build step complications.</p>
-          <a href="#contact" class="btn-secondary">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="testimonials">
-    <div class="section-container">
-      <div class="section-title">
-        <h2>Trusted by Developers</h2>
-        <p>Here is what creators say about working with our architecture.</p>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p>"The code quality is exceptionally clean and easy to customize. Cut our deployment setup time in half."</p>
-          <div class="user-info">
-            <strong>Alex Vance</strong>
-            <span>Lead Web Developer</span>
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Coming Soon</div>
+            <h3>More Lua &amp; Script Utilities</h3>
+            <p>New script formatting, bytecode inspection, and modding utilities are being added regularly. Join Telegram for updates.</p>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p>"Responsive drawer navigation and mobile optimization worked flawlessly out of the box."</p>
-          <div class="user-info">
-            <strong>Sara Chen</strong>
-            <span>Product Designer</span>
-          </div>
-        </div>
+          <a href="https://t.me/RootModArena" target="_blank" rel="noopener" class="card-link">Get Updates on TG &rarr;</a>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA / Subscription Section -->
-  <section id="contact" class="cta">
-    <div class="section-container cta-box">
-      <h2>Ready to Build Your Next Project?</h2>
-      <p>Subscribe to stay updated with product releases, performance guides, and updates.</p>
-      <form class="cta-form" id="subscribe-form">
-        <input type="email" placeholder="Enter your email address" required id="email-input" />
-        <button type="submit" class="btn-primary">Subscribe</button>
-      </form>
-      <div id="form-message" class="form-message"></div>
-    </div>
-  </section>
+    <!-- 3) Mod APKs Section -->
+    <section class="section-block" id="mod-apks">
+      <div class="section-header">
+        <h2>Mod APKs</h2>
+        <span>Tested Android Mods &amp; Releases</span>
+      </div>
+      <div class="grid">
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Android Mods</div>
+            <h3>Latest Mod APK Releases</h3>
+            <p>Explore unlocked apps, gaming mods, and step-by-step installation tutorials shared on our YouTube &amp; Telegram.</p>
+          </div>
+          <a href="https://youtube.com/@modnexusapk?si=yvfL3LLUsvT85KG0" target="_blank" rel="noopener" class="card-link">Watch Tutorials &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Community Support</div>
+            <h3>Request a Mod / Help Desk</h3>
+            <p>Need help installing a Mod APK or want to request a new app? Ask directly in our active Telegram support group.</p>
+          </div>
+          <a href="https://t.me/HackAndModsChat" target="_blank" rel="noopener" class="card-link">Join Help Chat &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4) College Wala Section -->
+    <section class="section-block" id="college-section">
+      <div class="section-header">
+        <h2>Engineering College Guides</h2>
+        <span>State Counselling, Cutoffs &amp; Top Colleges</span>
+      </div>
+      <div class="grid">
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Top Institutes</div>
+            <h3>Best Engineering Colleges Guide</h3>
+            <p>Compare top engineering colleges in India based on placements, fee structure, and entrance exam cutoffs.</p>
+          </div>
+          <a href="BestCollage.html" class="card-link">Read Guide &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Bihar Counselling</div>
+            <h3>BCECE Engineering Colleges</h3>
+            <p>Complete list of Bihar government and top engineering colleges accepting BCECE and JEE Main scores.</p>
+          </div>
+          <a href="bcececollages.html" class="card-link">Explore BCECE &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">UP Counselling</div>
+            <h3>UPTAC Government Colleges</h3>
+            <p>Detailed overview of UPTAC (AKTU) government engineering colleges, seat matrix, and counselling process.</p>
+          </div>
+          <a href="uptacgov.html" class="card-link">Explore UPTAC &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">College Review</div>
+            <h3>GL Bajaj Institute Guide</h3>
+            <p>Fees, B.Tech CSE placements, admission criteria, and campus review for GL Bajaj Greater Noida.</p>
+          </div>
+          <a href="gl-bajaj.html" class="card-link">View GL Bajaj &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Uttar Pradesh</div>
+            <h3>Best Colleges in UP</h3>
+            <p>Top government and private B.Tech colleges in Uttar Pradesh with cutoff and placement insights.</p>
+          </div>
+          <a href="upbestcollage.html" class="card-link">View UP Colleges &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Delhi NCR</div>
+            <h3>Best Engineering Colleges in Delhi</h3>
+            <p>Top engineering institutes in Delhi NCR, JAC Delhi counselling details, and fee comparison.</p>
+          </div>
+          <a href="delhi%20collage.html" class="card-link">View Delhi Colleges &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Rajasthan</div>
+            <h3>REAP &amp; Top Rajasthan Colleges</h3>
+            <p>REAP government college list and top engineering institutes across Rajasthan.</p>
+          </div>
+          <a href="rajisthanclg.html" class="card-link">View Rajasthan Colleges &rarr;</a>
+        </article>
+
+        <article class="card searchable-item">
+          <div>
+            <div class="card-tag">Gujarat &amp; Tamil Nadu</div>
+            <h3>Gujarat &amp; Tamil Nadu Top Colleges</h3>
+            <p>Explore ACPC Gujarat and TNEA Tamil Nadu top engineering colleges for B.Tech admissions.</p>
+          </div>
+          <a href="gujratbestclg.html" class="card-link">View Gujarat Colleges &rarr;</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5) Others & Complete Sitemap Directory (Great for Google Indexing) -->
+    <section class="directory-box" id="others">
+      <h2>All Pages &amp; Resources Directory</h2>
+      <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 14px;">
+        Direct quick links to every tool and guide hosted on Androidsmodarena:
+      </p>
+      <div class="directory-links">
+        <a href="decrypt-lua.html" class="searchable-item">Decrypt Lua Tool</a>
+        <a href="BestCollage.html" class="searchable-item">Best Engineering Colleges</a>
+        <a href="bcececollages.html" class="searchable-item">BCECE Colleges List</a>
+        <a href="uptacgov.html" class="searchable-item">UPTAC Gov Colleges</a>
+        <a href="upbestcollage.html" class="searchable-item">UP Best Colleges</a>
+        <a href="gl-bajaj.html" class="searchable-item">GL Bajaj College Review</a>
+        <a href="delhi%20collage.html" class="searchable-item">Delhi Colleges</a>
+        <a href="Reapgov.html" class="searchable-item">REAP Gov Colleges</a>
+        <a href="rajisthanclg.html" class="searchable-item">Rajasthan Colleges</a>
+        <a href="gujratbestclg.html" class="searchable-item">Gujarat Best Colleges</a>
+        <a href="tamilnadubestclg.html" class="searchable-item">Tamil Nadu Best Colleges</a>
+        <a href="iitbclg.html" class="searchable-item">IIT Bombay / Top IIT Guide</a>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col main-col">
-        <a href="#" class="logo">Apex<span>Dynamics</span></a>
-        <p>Modern web solutions designed for speed, flexibility, and performance.</p>
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Androidsmodarena</h4>
+        <p>Free Lua decryption utilities, Android Mod APKs, and engineering admission resources built for students and developers.</p>
       </div>
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <a href="#features">Features</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#testimonials">Testimonials</a>
+      <div>
+        <h4>Quick Sections</h4>
+        <ul>
+          <li><a href="#main-menu">Main Menu</a></li>
+          <li><a href="#lua-tools">Lua Tool Section</a></li>
+          <li><a href="#mod-apks">Mod APKs</a></li>
+          <li><a href="#college-section">College Section</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#">Documentation</a>
-        <a href="#">GitHub Repository</a>
-        <a href="#">Privacy Policy</a>
+      <div>
+        <h4>Community &amp; Contact</h4>
+        <ul>
+          <li><a href="https://youtube.com/@modnexusapk?si=yvfL3LLUsvT85KG0" target="_blank" rel="noopener">YouTube: @modnexusapk</a></li>
+          <li><a href="https://t.me/RootModArena" target="_blank" rel="noopener">Telegram: @RootModArena</a></li>
+          <li><a href="https://t.me/HackAndModsChat" target="_blank" rel="noopener">Help Group: @HackAndModsChat</a></li>
+          <li><a href="mailto:luadecode@gmail.com">Email: luadecode@gmail.com</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 AndroidModArenaIndevs. All rights reserved.</p>
+    <div class="copyright">
+      &copy; 2026 Androidsmodarena. All rights reserved.
     </div>
   </footer>
 
