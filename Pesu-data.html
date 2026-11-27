@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PES University Placements (2022–2026) | Branch-Wise &amp; Year-Wise Analysis – Androidsmodarena</title>
+  <meta name="description" content="Complete PES University placement data (2022 to 2026) sourced from PESUfy with branch-wise CSE, AIML, ECE, EEE, Mechanical, Biotech & MCA placement statistics, interactive charts, and Tier-1/Tier-2/Tier-3 breakdowns." />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --bg-card: #161f33;
+      --bg-card-hover: #1c2740;
+      --border-color: #26324d;
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #8b5cf6;
+      --accent-rose: #f43f5e;
+      --gradient-brand: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Navbar & Hamburger Menu matching Androidsmodarena */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 25, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-weight: 800;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--gradient-brand);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+
+    .brand span {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #fff;
+    }
+
+    .nav-links a.home-pill {
+      background: rgba(59, 130, 246, 0.14);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #60a5fa;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .nav-links a.home-pill:hover {
+      background: rgba(59, 130, 246, 0.25);
+      color: #fff;
+    }
+
+    /* Hamburger Button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 1.25rem 1.5rem;
+      gap: 0.65rem;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--bg-card);
+      color: #fff;
+      border-color: var(--border-color);
+    }
+
+    .mobile-menu a.home-highlight {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #60a5fa;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* Main Layout */
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 55%),
+                  radial-gradient(circle at bottom left, rgba(6, 182, 212, 0.12), transparent 55%),
+                  var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 2.25rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+    }
+
+    .badge.cyan {
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .badge.emerald {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      color: var(--text-secondary);
+      max-width: 820px;
+      font-size: 1rem;
+    }
+
+    /* Notice Box */
+    .notice-box {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      border-left: 4px solid var(--accent-amber);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: #fde68a;
+    }
+
+    .notice-box strong {
+      color: #fbbf24;
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .kpi-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.35rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent-blue);
+    }
+
+    .kpi-label {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.35rem;
+    }
+
+    .kpi-value {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.25rem;
+    }
+
+    .kpi-sub {
+      font-size: 0.82rem;
+      color: var(--accent-emerald);
+    }
+
+    /* Section Headers */
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* Filter Tabs */
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.48rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: #fff;
+      border-color: var(--accent-blue);
+    }
+
+    .tab-btn.active {
+      background: var(--accent-blue);
+      border-color: var(--accent-blue);
+      color: #fff;
+    }
+
+    /* Charts Grid */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.35rem;
+    }
+
+    .chart-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 290px;
+      width: 100%;
+    }
+
+    /* Tables */
+    .table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+    }
+
+    th, td {
+      padding: 0.95rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.92rem;
+    }
+
+    th {
+      background: rgba(11, 15, 25, 0.65);
+      color: var(--text-secondary);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    tbody tr:hover {
+      background: var(--bg-card-hover);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.22rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .pill-tier1 { background: rgba(16, 185, 129, 0.16); color: #34d399; }
+    .pill-tier2 { background: rgba(59, 130, 246, 0.16); color: #60a5fa; }
+    .pill-tier3 { background: rgba(245, 158, 11, 0.16); color: #fbbf24; }
+
+    /* PESUfy Archive Cards */
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .archive-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .archive-card h4 {
+      font-size: 1.02rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .archive-card p {
+      font-size: 0.87rem;
+      color: var(--text-secondary);
+    }
+
+    .archive-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    /* Search Input */
+    .search-bar {
+      width: 100%;
+      max-width: 340px;
+      padding: 0.55rem 0.95rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .search-bar:focus {
+      border-color: var(--accent-blue);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      padding: 2rem 1.25rem;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation with Hamburger Menu & Home Link -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="https://www.androidmodsarena.indevs.in/" class="brand">
+        <div class="brand-icon">AM</div>
+        <div>Androids<span>modarena</span></div>
+      </a>
+
+      <!-- Desktop Menu -->
+      <ul class="nav-links">
+        <li><a href="https://www.androidmodsarena.indevs.in/" class="home-pill">🏠 Home</a></li>
+        <li><a href="https://www.androidmodsarena.indevs.in/BestCollage">Best Colleges 2026</a></li>
+        <li><a href="https://www.androidmodsarena.indevs.in/iitbclg.html">IIT Bombay Stats</a></li>
+        <li><a href="#branch-data" class="active">PESU Placements</a></li>
+        <li><a href="https://www.androidmodsarena.indevs.in/mt-manager-vip.html">Mod APKs</a></li>
+      </ul>
+
+      <!-- Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Hamburger Drawer -->
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+      <a href="https://www.androidmodsarena.indevs.in/" class="home-highlight">🏠 Home (androidmodsarena.indevs.in)</a>
+      <a href="https://www.androidmodsarena.indevs.in/BestCollage">🎓 College Section – Best B.Tech Colleges 2026</a>
+      <a href="https://www.androidmodsarena.indevs.in/iitbclg.html">📊 IIT Bombay Placement Data (2021–2025)</a>
+      <a href="#year-comparison">📈 PESU Year-Wise Summary (2022–2026)</a>
+      <a href="#branch-data">💻 PESU Branch-Wise Breakdown</a>
+      <a href="#pesufy-archive">🗂️ PESUfy Batch Archives (CSE, ECE, MCA)</a>
+      <a href="https://www.androidmodsarena.indevs.in/decrypt-lua">🛠️ Lua Tool Section</a>
+      <a href="https://www.androidmodsarena.indevs.in/mt-manager-vip.html">📱 Mod APKs</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="https://www.androidmodsarena.indevs.in/">Home</a>
+      <span>›</span>
+      <a href="https://www.androidmodsarena.indevs.in/BestCollage">College Section</a>
+      <span>›</span>
+      <span>PES University Placements (2024–2026)</span>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="badge-row">
+        <span class="badge">PESUfy Placement Index</span>
+        <span class="badge cyan">RR &amp; EC Campuses Combined</span>
+        <span class="badge emerald">2024 – 2026 Cycles</span>
+      </div>
+      <h1>PES University Placement Data (2024–2026): Branch-Wise &amp; Year-Wise Analysis</h1>
+      <p>
+        Comprehensive placement tracker covering Computer Science (CSE), CSE (AI &amp; ML), Electronics &amp; Communication (ECE), Electrical &amp; Electronics (EEE), Mechanical (ME), Biotechnology (BT), and MCA batches based on PESUfy student records, campus offer tiers, and NIRF filings.
+      </p>
+    </section>
+
+    <!-- Data Transparency Notice -->
+    <div class="notice-box">
+      <strong>Data Transparency Note:</strong> PES University releases official combined NIRF median figures and total offer counts, while branch-wise averages and batch trackers (2022–2026 CSE, ECE, and MCA) are compiled from student-maintained PESUfy documentation (<code>pesufy.netlify.app/docs/fifth-page/</code>) and campus placement cell snapshots.
+    </div>
+
+    <!-- KPI Cards -->
+    <section class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Highest Package (2025–26)</div>
+        <div class="kpi-value">₹68.00 LPA</div>
+        <div class="kpi-sub">Up from ₹65.00 LPA in 2024</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">2026 Total Placement Offers</div>
+        <div class="kpi-value">1,700+</div>
+        <div class="kpi-sub">440+ Participating Companies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">CSE Est. Average CTC</div>
+        <div class="kpi-value">₹16.5–18.5 LPA</div>
+        <div class="kpi-sub">85% – 92% Placement Rate</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Tier-1 Offers (₹12–60+ LPA)</div>
+        <div class="kpi-value">555 Offers</div>
+        <div class="kpi-sub">2026 Campus Snapshot</div>
+      </div>
+    </section>
+
+    <!-- Interactive Charts -->
+    <div class="section-header">
+      <h2>Visual Placement Analytics (2024–2026)</h2>
+    </div>
+    <section class="charts-grid">
+      <div class="chart-card">
+        <h3>Branch-Wise Average vs. Highest CTC (LPA)</h3>
+        <div class="chart-wrapper">
+          <canvas id="branchCtcChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3>2026 Campus Offer Distribution by Compensation Tier</h3>
+        <div class="chart-wrapper">
+          <canvas id="tierDistChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Year-Wise Official & Reported Summary -->
+    <div class="section-header" id="year-comparison">
+      <h2>1. Overall B.Tech Placement Summary (2024 – 2026)</h2>
+    </div>
+    <div class="table-card">
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Placement Metric</th>
+              <th>2024 Graduating Batch</th>
+              <th>2025 Graduating Batch</th>
+              <th>2026 Graduating Batch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Participating Companies</strong></td>
+              <td>350+</td>
+              <td>349 – 350+</td>
+              <td><strong>440+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Total Placement Offers</strong></td>
+              <td>1,500+</td>
+              <td>1,492 – 1,500+</td>
+              <td><strong>1,700+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Internship Offers</strong></td>
+              <td>1,250+</td>
+              <td>1,243 – 1,250+</td>
+              <td><strong>1,400+</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Highest Package (CTC)</strong></td>
+              <td>₹65.00 LPA</td>
+              <td>₹68.00 LPA</td>
+              <td><strong>₹68.00 LPA</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Overall Reported Average CTC</strong></td>
+              <td>~₹13.50 – ₹14.20 LPA</td>
+              <td>~₹14.00 – ₹14.50 LPA</td>
+              <td><strong>₹14.43 – ₹14.83 LPA</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Median Package (NIRF UG 4-Yr)</strong></td>
+              <td>₹12.47 – ₹12.80 LPA</td>
+              <td>₹13.05 LPA</td>
+              <td>₹12.00 LPA (Interim)</td>
+            </tr>
+            <tr>
+              <td><strong>Placement Rate (UG 4-Yr)</strong></td>
+              <td>~66.5% (+15% Higher Studies)</td>
+              <td>70.0% (86.9% incl. Higher Studies)</td>
+              <td>Ongoing / Final NIRF Awaited</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Branch-Wise Breakdown with Filter & Search -->
+    <div class="section-header" id="branch-data">
+      <h2>2. Branch-Wise Placement Details (2024 – 2026)</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.65rem; align-items: center;">
+        <div class="tabs" id="branchFilterTabs">
+          <button class="tab-btn active" data-filter="all">All Branches</button>
+          <button class="tab-btn" data-filter="circuital">CSE / AIML / ECE</button>
+          <button class="tab-btn" data-filter="core">EEE / Mech / Biotech</button>
+          <button class="tab-btn" data-filter="pg">MCA (PG)</button>
+        </div>
+        <input type="text" id="branchSearch" class="search-bar" placeholder="Search branch or recruiter..." />
+      </div>
+    </div>
+
+    <div class="table-card">
+      <div class="table-responsive">
+        <table id="branchTable">
+          <thead>
+            <tr>
+              <th>Program / Branch</th>
+              <th>Est. Average CTC</th>
+              <th>Highest CTC (2025–26)</th>
+              <th>Placement %</th>
+              <th>Dominant Offer Tier</th>
+              <th>Top Recruiters &amp; Role Split</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-category="circuital">
+              <td><strong>Computer Science &amp; Engineering (CSE)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR &amp; EC Campuses</span></td>
+              <td><strong>₹16.5 – ₹18.5 LPA</strong></td>
+              <td><strong>₹68.00 LPA</strong></td>
+              <td>85% – 92%</td>
+              <td><span class="pill pill-tier1">Tier-1 Dominant</span></td>
+              <td>Apple, Microsoft, Google, Amazon, Nvidia, Atlassian, Goldman Sachs, Cisco (SDE, Systems, FinTech)</td>
+            </tr>
+            <tr data-category="circuital">
+              <td><strong>CSE (AI &amp; Machine Learning)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR &amp; EC Campuses</span></td>
+              <td><strong>₹15.5 – ₹17.5 LPA</strong></td>
+              <td><strong>₹65.00 LPA</strong></td>
+              <td>85% – 90%</td>
+              <td><span class="pill pill-tier1">Tier-1 Dominant</span></td>
+              <td>Treated on par with core CSE by 95%+ software recruiters; ML Engineer, Data Scientist, Full-Stack roles</td>
+            </tr>
+            <tr data-category="circuital">
+              <td><strong>Electronics &amp; Communication (ECE)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR &amp; EC Campuses</span></td>
+              <td><strong>₹11.0 – ₹14.5 LPA</strong></td>
+              <td><strong>₹55.00 LPA</strong></td>
+              <td>75% – 85%</td>
+              <td><span class="pill pill-tier1">Tier-1 / Tier-2</span></td>
+              <td>~12–15% Core VLSI/Hardware (Texas Instruments, Qualcomm, Intel, Samsung); ~85% Software &amp; Consulting</td>
+            </tr>
+            <tr data-category="core">
+              <td><strong>Electrical &amp; Electronics (EEE)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR Campus</span></td>
+              <td><strong>₹7.5 – ₹9.5 LPA</strong></td>
+              <td><strong>₹20.0 – ₹25.0 LPA</strong></td>
+              <td>70% – 75%</td>
+              <td><span class="pill pill-tier2">Tier-2 Core/IT</span></td>
+              <td>Siemens, Schneider Electric, Bosch, ABB, plus IT/Analytics roles at Deloitte, Accenture, Infosys</td>
+            </tr>
+            <tr data-category="core">
+              <td><strong>Mechanical Engineering (ME)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR Campus</span></td>
+              <td><strong>₹6.5 – ₹8.5 LPA</strong></td>
+              <td><strong>₹15.0 – ₹20.0 LPA</strong></td>
+              <td>65% – 72%</td>
+              <td><span class="pill pill-tier2">Tier-2 / Tier-3</span></td>
+              <td>Mercedes-Benz R&amp;D, Mahindra, Bosch, L&amp;T; highest offers from Consulting (EY, Deloitte) &amp; Analytics</td>
+            </tr>
+            <tr data-category="core">
+              <td><strong>Biotechnology (BT)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">RR Campus</span></td>
+              <td><strong>₹6.0 – ₹7.5 LPA</strong></td>
+              <td><strong>₹12.0 – ₹15.0 LPA</strong></td>
+              <td>60% – 68%</td>
+              <td><span class="pill pill-tier3">Core / Higher Ed</span></td>
+              <td>Biocon, Syngene, Novo Nordisk, IQVIA; large proportion pursues MS abroad or transitions to Analyst roles</td>
+            </tr>
+            <tr data-category="pg">
+              <td><strong>Master of Computer Applications (MCA)</strong><br><span style="color:var(--text-secondary);font-size:0.8rem;">2026 PESUfy Track</span></td>
+              <td><strong>₹7.5 – ₹9.8 LPA</strong></td>
+              <td><strong>₹24.00 LPA</strong></td>
+              <td>72% – 80%</td>
+              <td><span class="pill pill-tier2">Tier-2 Software</span></td>
+              <td>Product &amp; SaaS mid-cap firms, FinTech back-office engineering, cloud &amp; QA automation roles</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PESUfy Batch Pages Archive -->
+    <div class="section-header" id="pesufy-archive">
+      <h2>3. PESUfy Placement Tracker Index (2022 – 2026)</h2>
+    </div>
+    <section class="archive-grid">
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2026 (CSE) <span class="pill pill-tier1">Latest</span></h4>
+          <p>Active batch tracker covering Tier-1 product drives, summer internship PPO conversions, and RR + EC combined offers.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Highest: ₹68 LPA</span>
+          <span>555+ Tier-1 Offers</span>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2026 (MCA) <span class="pill pill-tier2">PG Track</span></h4>
+          <p>Postgraduate MCA placement sheet tracking software engineering, full-stack, and enterprise analyst roles.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Avg: ~₹8.5 LPA</span>
+          <span>Highest: ₹24 LPA</span>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2025 (CSE) <span class="pill pill-tier1">Completed</span></h4>
+          <p>Strong rebound over 2024 with 350+ recruiters visiting campus and NIRF UG median reaching ₹13.05 LPA.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Highest: ₹68 LPA</span>
+          <span>Median: ₹13.05 LPA</span>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2025 (ECE) <span class="pill pill-tier2">Completed</span></h4>
+          <p>Detailed split of semiconductor/VLSI core selections (TI, Qualcomm, Nvidia) versus IT/consulting placements.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Highest: ₹55 LPA</span>
+          <span>Avg: ~₹12.8 LPA</span>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2024 (CSE) <span class="pill pill-tier3">Archive</span></h4>
+          <p>1,500+ overall offers despite broader tech hiring headwinds; strong domestic &amp; international product conversions.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Highest: ₹65 LPA</span>
+          <span>Median: ₹12.47 LPA</span>
+        </div>
+      </div>
+
+      <div class="archive-card">
+        <div>
+          <h4>Placements – 2022 &amp; 2023 (CSE) <span class="pill pill-tier3">Historical</span></h4>
+          <p>Post-pandemic tech boom baseline records from PESUfy documenting peak hiring velocity and legacy recruiter lists.</p>
+        </div>
+        <div class="archive-meta">
+          <span>Peak Boom Era</span>
+          <span>Reference Baseline</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 <strong>Androidsmodarena</strong> (www.androidmodsarena.indevs.in). All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://www.androidmodsarena.indevs.in/">Home</a>
+        <a href="https://www.androidmodsarena.indevs.in/BestCollage">Best Colleges 2026</a>
+        <a href="https://www.androidmodsarena.indevs.in/iitbclg.html">IIT Bombay Stats</a>
+        <a href="https://main--pesufy.netlify.app/docs/fifth-page/" target="_blank" rel="noopener">Source: PESUfy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu when a link is clicked
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Branch Filter Tabs & Search
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const searchInput = document.getElementById('branchSearch');
+    const tableRows = document.querySelectorAll('#branchTable tbody tr');
+    let currentFilter = 'all';
+
+    function filterTable() {
+      const query = searchInput.value.toLowerCase().trim();
+      tableRows.forEach(row => {
+        const category = row.getAttribute('data-category');
+        const text = row.textContent.toLowerCase();
+        const matchesTab = currentFilter === 'all' || category === currentFilter;
+        const matchesSearch = !query || text.includes(query);
+        row.style.display = (matchesTab && matchesSearch) ? '' : 'none';
+      });
+    }
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.getAttribute('data-filter');
+        filterTable();
+      });
+    });
+
+    searchInput.addEventListener('input', filterTable);
+
+    // Chart.js Visualizations
+    const ctxBranch = document.getElementById('branchCtcChart').getContext('2d');
+    new Chart(ctxBranch, {
+      type: 'bar',
+      data: {
+        labels: ['CSE', 'CSE (AIML)', 'ECE', 'EEE', 'Mechanical', 'Biotech', 'MCA'],
+        datasets: [
+          {
+            label: 'Est. Average CTC (LPA)',
+            data: [17.5, 16.5, 12.75, 8.5, 7.5, 6.75, 8.65],
+            backgroundColor: '#3b82f6',
+            borderRadius: 6
+          },
+          {
+            label: 'Highest CTC (LPA)',
+            data: [68, 65, 55, 22.5, 17.5, 13.5, 24],
+            backgroundColor: '#06b6d4',
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#d1d5db' } }
+        },
+        scales: {
+          x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(255,255,255,0.08)' }, title: { display: true, text: 'CTC (₹ LPA)', color: '#9ca3af' } }
+        }
+      }
+    });
+
+    const ctxTier = document.getElementById('tierDistChart').getContext('2d');
+    new Chart(ctxTier, {
+      type: 'doughnut',
+      data: {
+        labels: ['Tier-1 (₹12 – ₹60+ LPA)', 'Tier-2 (₹6 – ₹12 LPA)', 'Tier-3 (₹3 – ₹6 LPA)'],
+        datasets: [{
+          data: [555, 332, 100],
+          backgroundColor: ['#10b981', '#3b82f6', '#f59e0b'],
+          borderColor: '#161f33',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#d1d5db', padding: 16 } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
