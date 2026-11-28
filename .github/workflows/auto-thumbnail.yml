@@ -1,0 +1,168 @@
+name: Auto Thumbnail & Telegram Photo Post
+
+on:
+  workflow_run:
+    workflows: ["Auto AI Post, Sitemap & Telegram", "Auto AI Post, Internal Links, Sitemap & Telegram", "Auto AI Post & Sitemap Update"]
+    types: [completed]
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-thumbnails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow & Requests
+        run: pip install pillow requests
+
+      - name: Generate Thumbnails & Inject OG Tags
+        env:
+          SITE_URL: "https://www.androidmodsarena.indevs.in"
+        run: |
+          python - << 'EOF'
+          import os, re, glob, json, textwrap, urllib.parse
+          from PIL import Image, ImageDraw, ImageFont
+
+          site_url = os.environ["SITE_URL"].rstrip("/")
+          os.makedirs("thumbnails", exist_ok=True)
+
+          html_files = sorted([
+              f.replace("\\", "/") for f in glob.glob("**/*.html", recursive=True)
+              if not os.path.basename(f).startswith("google")
+              and f not in ("index.html", "all-pages.html")
+          ])
+
+          try:
+              font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 52)
+              font_badge = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 24)
+              font_sub = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
+          except Exception:
+              font_title = ImageFont.load_default()
+              font_badge = font_title
+              font_sub = font_title
+
+          newly_created = []
+
+          for page in html_files:
+              base_name = os.path.splitext(os.path.basename(page))[0]
+              safe_slug = re.sub(r'[^a-z0-9_-]+', '-', urllib.parse.unquote(base_name).lower()).strip('-')
+              thumb_path = f"thumbnails/{safe_slug}.png"
+              thumb_url = f"{site_url}/{thumb_path}"
+              page_url = f"{site_url}/{urllib.parse.quote(page, safe='/')}"
+
+              with open(page, "r", encoding="utf-8", errors="ignore") as pf:
+                  html_content = pf.read()
+
+              # Page ka <title> nikaalein ya filename se clean title banayein
+              title_match = re.search(r'<title>(.*?)</title>', html_content, flags=re.IGNORECASE | re.DOTALL)
+              if title_match:
+                  raw_title = re.sub(r'\s+', ' ', title_match.group(1)).strip()
+                  raw_title = re.sub(r'\s*[-|]\s*Android\s*Mods\s*Arena.*$', '', raw_title, flags=re.IGNORECASE).strip()
+              else:
+                  raw_title = urllib.parse.unquote(base_name).replace("-", " ").replace("_", " ").title()
+
+              # 1. Agar thumbnail nahi bana hai toh 1200x630 banner banayein
+              if not os.path.exists(thumb_path):
+                  img = Image.new("RGB", (1200, 630), color="#0f172a")
+                  draw = ImageDraw.Draw(img)
+
+                  # Outer card aur accent border
+                  draw.rounded_rectangle([(36, 36), (1164, 594)], radius=24, fill="#1e293b", outline="#38bdf8", width=4)
+                  draw.rectangle([(36, 36), (56, 594)], fill="#38bdf8")
+
+                  # Top website badge
+                  draw.text((90, 80), "ANDROIDMODSARENA", fill="#38bdf8", font=font_badge)
+
+                  # Title ko multi-line wrap karein (max 4 lines)
+                  lines = textwrap.wrap(raw_title, width=30)[:4]
+                  y_text = 165
+                  for line in lines:
+                      draw.text((90, y_text), line, fill="#f8fafc", font=font_title)
+                      y_text += 72
+
+                  # Bottom footer text
+                  draw.text((90, 515), "Complete Guide • Tutorials • Resources", fill="#94a3b8", font=font_sub)
+
+                  img.save(thumb_path, "PNG", optimize=True)
+                  print(f"Generated thumbnail: {thumb_path}")
+                  newly_created.append({
+                      "title": raw_title,
+                      "url": page_url,
+                      "thumb_path": thumb_path
+                  })
+
+              # 2. HTML <head> mein og:image tag add karein (agar pehle se nahi hai)
+              if "og:image" not in html_content.lower():
+                  og_tags = (
+                      f'  <meta property="og:image" content="{thumb_url}">\n'
+                      f'  <meta name="twitter:card" content="summary_large_image">\n'
+                  )
+                  if re.search(r'</head>', html_content, flags=re.IGNORECASE):
+                      updated_html = re.sub(
+                          r'</head>',
+                          og_tags + '</head>',
+                          html_content,
+                          count=1,
+                          flags=re.IGNORECASE
+                      )
+                      with open(page, "w", encoding="utf-8") as pf:
+                          pf.write(updated_html)
+
+          with open("/tmp/new_thumbs.json", "w", encoding="utf-8") as tf:
+              json.dump(newly_created, tf)
+          EOF
+
+      - name: Commit & Push Thumbnails
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-generate page thumbnails & og:image tags [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase && git push && break || sleep 5
+            done
+          fi
+
+      - name: Send Thumbnail Post to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, json, time, requests
+
+          tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+
+          if os.path.exists("/tmp/new_thumbs.json") and tg_token and tg_chat:
+              with open("/tmp/new_thumbs.json", "r", encoding="utf-8") as tf:
+                  items = json.load(tf)
+
+              if items:
+                  time.sleep(30)
+                  # Ek run mein max 2 photo posts bhejega taaki purane pages se channel spam na ho
+                  for item in items[-2:]:
+                      caption = f"{item['title']}\n\nRead full guide:\n{item['url']}"
+                      with open(item["thumb_path"], "rb") as photo_file:
+                          res = requests.post(
+                              f"https://api.telegram.org/bot{tg_token}/sendPhoto",
+                              data={"chat_id": tg_chat, "caption": caption},
+                              files={"photo": photo_file},
+                              timeout=30
+                          )
+                      print(f"Telegram photo status for {item['url']}: {res.status_code}")
+          EOF
