@@ -1,0 +1,50 @@
+GameGuardian Complete Beginner Setup Guide for Root and Virtual Space
+Understanding GameGuardian Memory Ranges (Ca, Xa, Jh, A, O, Bad)
+GameGuardian Value Types Explained: Dword, Float, Double, Qword, and XOR
+How to Use Fuzzy Search in GameGuardian for Unknown Values
+Mastering Group Search and Offset Calculation in GameGuardian
+Pointer Search Tutorial in GameGuardian for Dynamic Memory Addresses
+How to Use Speedhack and Memory Freeze Safely in GameGuardian
+GameGuardian Lua Scripting Basics: searchNumber, getResults, and editAll
+How to Create Interactive Menus in GameGuardian Using gg.choice and gg.multiChoice
+Offset-Based Memory Patching in GameGuardian Lua Scripts
+Error Handling and Crash Prevention in GameGuardian Scripts Using pcall
+How to Optimize GameGuardian Lua Scripts for Faster Execution
+Building a Config and Save System in GameGuardian Lua Scripts
+Introduction to LASM (Lua Assembly) and Compiled Lua Bytecode
+How to Disassemble and Reassemble Lua Bytecode Using LASM
+Understanding LASM Opcodes, Registers, Constants, and Upvalues
+Patching Script Logic Directly at the LASM Bytecode Level
+How Lua Obfuscation Works: Variable Renaming and String Encryption
+Control Flow Flattening Techniques for Protecting Lua Scripts
+How to Implement Anti-Log Protection in GameGuardian Lua Scripts
+Anti-Hook Techniques in Lua: Detecting Tampered gg, os, io, and debug Functions
+How Anti-Load Protection Prevents Unauthorized loadstring and File Dumping
+Environment and Metatable Integrity Checks in Lua Scripts
+How Memory Dumping Works and Why No Lua Obfuscation Is Unbreakable
+Android APK File Structure Explained: Manifest, DEX, Lib, Res, and Assets
+Complete Workflow to Decompile, Modify, Rebuild, and Sign an Android APK
+Beginner Guide to Smali Code Editing in Android Apps
+How to Use JADX and APKTool Together for Android Reverse Engineering
+Introduction to Native Library Modding: Understanding libil2cpp.so and libgame.so
+How to Find Offsets and Apply Hex Patches in ARM and ARM64 Libraries
+Essential ARM64 Assembly Instructions Every Android Modder Should Know
+Understanding APK Signature Verification and Basic Anti-Tamper Checks
+Client-Side vs Server-Side Validation in Mobile Games Explained
+How Runtime Memory Inspection Works on Android
+Safe Testing Environment Setup for Android App Modding and Reverse Engineering
+How to Bypass Basic Root and Virtual Environment Detection in Android Apps
+Understanding XOR Encryption in Game Memory Values
+Creating Multi-Feature Toggle Menus in GameGuardian Lua
+How to Use gg.getRangesList to Target Specific Native Libraries in Lua
+Automated Hex and Byte Patching Functions in GameGuardian Scripts
+Common Mistakes That Cause GameGuardian Scripts to Crash or Lag
+How to Protect Lua Strings Using Custom Bytecode and XOR Decoders
+Detecting Hooked Print and File Write Functions in Lua (Anti-Log Deep Dive)
+Understanding Lua Debug Library Risks and How Anti-Hook Scripts Block Them
+Difference Between Lua 5.1, Lua 5.2, Lua 5.3, and LuaJIT Bytecode Formats
+How to Read and Modify Smali Conditional Jumps (if-eq, if-ne, goto)
+Understanding APK Alignment and Signing with zipalign and apksigner
+How IL2CPP Dumping Works for Unity Android Games
+Basic Anti-Cheat Mechanisms in Android Games and How They Detect Memory Edits
+Best Practices for Structuring and Maintaining Clean GameGuardian Lua Projects
