@@ -2,8 +2,9 @@ name: Auto AI Post, Sitemap & Telegram
 
 on:
   schedule:
-    - cron: '30 3 * * *' # Roz subah 9:00 AM IST par chalega
-  workflow_dispatch:      # Manual test button ke liye
+    - cron: '30 3 * * *'   # Subah 9:00 AM IST (2 posts)
+    - cron: '30 13 * * *'  # Shaam 7:00 PM IST (2 posts)
+  workflow_dispatch:       # Manual test button ke liye
 
 permissions:
   contents: write
@@ -36,19 +37,22 @@ jobs:
           site_url = os.environ["SITE_URL"].rstrip("/")
           topics_file = "topics.txt"
           created_posts = []
+          posted_topics = set()
 
-          # 1. topics.txt se agle 2 topics padhein
+          # 1. topics.txt se agle 2 topics padhein (2 baar/day = 4 posts)
           if os.path.exists(topics_file) and api_key:
               with open(topics_file, "r", encoding="utf-8") as f:
                   all_topics = [line.strip() for line in f if line.strip()]
 
               batch = all_topics[:2]
-              posted_count = 0
 
               for topic in batch:
-                  slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-') + ".html"
-                  if os.path.exists(slug):
-                      slug = slug.replace(".html", "-guide.html")
+                  base_slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-')
+                  slug = f"{base_slug}.html"
+                  counter = 2
+                  while os.path.exists(slug):
+                      slug = f"{base_slug}-{counter}.html"
+                      counter += 1
 
                   prompt = f"""Write a complete, clean, responsive HTML5 webpage in English about: "{topic}".
           Website Name: AndroidModsArena
@@ -60,7 +64,7 @@ jobs:
           - Detailed, helpful 600+ word article with H1, H2 subheadings, bullet points, a summary table, and a 3-question FAQ section.
           """
 
-                  url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
+                  url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
                   headers = {
                       "Content-Type": "application/json",
                       "x-goog-api-key": api_key
@@ -83,7 +87,7 @@ jobs:
                                   out.write(html_code)
                               print(f"Created: {slug}")
                               created_posts.append({"title": topic, "url": f"{site_url}/{slug}"})
-                              posted_count += 1
+                              posted_topics.add(topic)
                           else:
                               print(f"Invalid HTML output for: {topic}")
                       else:
@@ -93,9 +97,9 @@ jobs:
 
                   time.sleep(5)
 
-              # Jo topics post ho gaye unhe topics.txt se hata dein
-              if posted_count > 0:
-                  remaining = all_topics[posted_count:]
+              # Jo topics successfully post ho gaye unhe topics.txt se hata dein
+              if posted_topics:
+                  remaining = [t for t in all_topics if t not in posted_topics]
                   with open(topics_file, "w", encoding="utf-8") as f:
                       f.write("\n".join(remaining) + ("\n" if remaining else ""))
 
@@ -172,7 +176,6 @@ jobs:
                   posts = json.load(nf)
 
               if posts:
-                  # 30 second wait taaki GitHub Pages par naye URLs live ho jayein
                   time.sleep(30)
                   for post in posts:
                       msg = f"New Guide Published on AndroidModsArena:\n\n{post['title']}\n\nRead full guide:\n{post['url']}"
