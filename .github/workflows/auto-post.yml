@@ -1,4 +1,4 @@
-name: Auto AI Post & Sitemap Update
+name: Auto AI Post, Sitemap & Telegram
 
 on:
   schedule:
@@ -29,12 +29,13 @@ jobs:
           SITE_URL: "https://www.androidmodsarena.indevs.in"
         run: |
           python - << 'EOF'
-          import os, re, glob, time, urllib.parse
+          import os, re, json, glob, time, urllib.parse
           import requests
 
           api_key = os.environ.get("GEMINI_API_KEY", "").strip()
           site_url = os.environ["SITE_URL"].rstrip("/")
           topics_file = "topics.txt"
+          created_posts = []
 
           # 1. topics.txt se agle 2 topics padhein
           if os.path.exists(topics_file) and api_key:
@@ -81,6 +82,7 @@ jobs:
                               with open(slug, "w", encoding="utf-8") as out:
                                   out.write(html_code)
                               print(f"Created: {slug}")
+                              created_posts.append({"title": topic, "url": f"{site_url}/{slug}"})
                               posted_count += 1
                           else:
                               print(f"Invalid HTML output for: {topic}")
@@ -96,6 +98,9 @@ jobs:
                   remaining = all_topics[posted_count:]
                   with open(topics_file, "w", encoding="utf-8") as f:
                       f.write("\n".join(remaining) + ("\n" if remaining else ""))
+
+          with open("/tmp/new_posts.json", "w", encoding="utf-8") as nf:
+              json.dump(created_posts, nf)
 
           # 2. sitemap.xml aur all-pages.html ko auto-update karein
           html_files = sorted([
@@ -150,3 +155,31 @@ jobs:
           git add .
           git diff --staged --quiet || git commit -m "Auto-publish AI posts & update sitemap [skip ci]"
           git push
+
+      - name: Share New Posts to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - << 'EOF'
+          import os, json, time, requests
+
+          tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+
+          if os.path.exists("/tmp/new_posts.json") and tg_token and tg_chat:
+              with open("/tmp/new_posts.json", "r", encoding="utf-8") as nf:
+                  posts = json.load(nf)
+
+              if posts:
+                  # 30 second wait taaki GitHub Pages par naye URLs live ho jayein
+                  time.sleep(30)
+                  for post in posts:
+                      msg = f"New Guide Published on AndroidModsArena:\n\n{post['title']}\n\nRead full guide:\n{post['url']}"
+                      res = requests.post(
+                          f"[https://api.telegram.org/bot](https://api.telegram.org/bot){tg_token}/sendMessage",
+                          json={"chat_id": tg_chat, "text": msg},
+                          timeout=30
+                      )
+                      print(f"Telegram status for {post['url']}: {res.status_code}")
+          EOF
