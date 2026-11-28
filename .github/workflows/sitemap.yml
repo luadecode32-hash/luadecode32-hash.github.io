@@ -1,4 +1,4 @@
-name: Auto Sitemap & Google Indexing
+name: Auto Sitemap & All Pages
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: pip install google-auth requests
 
-      - name: Update Sitemap & Submit to Google Indexing API
+      - name: Update Sitemap, All-Pages & Submit to Google API
         env:
           GOOGLE_INDEXING_KEY: ${{ secrets.GOOGLE_INDEXING_KEY }}
           SITE_URL: "https://www.androidmodsarena.indevs.in"
@@ -40,17 +40,18 @@ jobs:
 
           site_url = os.environ["SITE_URL"].rstrip("/")
 
-          # 1. Saari HTML files scan karein (Google verification file ko chhod kar)
+          # 1. Saari HTML files scan karein (root aur subfolders dono se)
           html_files = sorted([
-              f for f in glob.glob("*.html")
-              if not f.startswith("google")
+              f.replace("\\", "/") for f in glob.glob("**/*.html", recursive=True)
+              if not os.path.basename(f).startswith("google")
+              and f != "all-pages.html"
           ])
 
-          # 2. Sitemap.xml generate karein
-          urls = [f"{site_url}/"]
+          # 2. sitemap.xml generate karein
+          urls = [f"{site_url}/", f"{site_url}/all-pages.html"]
           for f in html_files:
               if f != "index.html":
-                  encoded_name = urllib.parse.quote(f)
+                  encoded_name = urllib.parse.quote(f, safe="/")
                   urls.append(f"{site_url}/{encoded_name}")
 
           sitemap_lines = [
@@ -64,49 +65,75 @@ jobs:
           with open("sitemap.xml", "w", encoding="utf-8") as sm:
               sm.write("\n".join(sitemap_lines))
 
-          # 3. Sirf naye ya badle hue pages nikaalein
+          # 3. all-pages.html directory page generate karein
+          link_items = []
+          for f in html_files:
+              if f != "index.html":
+                  encoded_name = urllib.parse.quote(f, safe="/")
+                  clean_title = os.path.splitext(os.path.basename(f))[0].replace("-", " ").replace("_", " ").title()
+                  link_items.append(f'    <li><a href="{encoded_name}">{clean_title}</a></li>')
+
+          all_pages_html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>All Pages - Android Mods Arena</title>
+          </head>
+          <body>
+            <h1>All Pages ({len(link_items)})</h1>
+            <ul>
+          {chr(10).join(link_items)}
+            </ul>
+          </body>
+          </html>
+          """
+
+          with open("all-pages.html", "w", encoding="utf-8") as ap:
+              ap.write(all_pages_html)
+
+          # 4. Sirf naye ya badle hue pages Google Indexing API ko bhejein
           try:
               diff_out = subprocess.check_output(
                   ["git", "diff", "--name-only", "HEAD~1", "HEAD"]
               ).decode("utf-8").splitlines()
               changed_files = [
                   f for f in diff_out
-                  if f.endswith(".html") and not f.startswith("google") and os.path.exists(f)
+                  if f.endswith(".html") and not os.path.basename(f).startswith("google") and os.path.exists(f)
               ]
           except Exception:
-              changed_files = html_files
+              changed_files = html_files[:50]
 
-          if not changed_files:
-              print("Koi naya HTML page change nahi hua.")
-              exit(0)
+          if changed_files and os.environ.get("GOOGLE_INDEXING_KEY"):
+              try:
+                  creds_dict = json.loads(os.environ["GOOGLE_INDEXING_KEY"])
+                  credentials = service_account.Credentials.from_service_account_info(
+                      creds_dict,
+                      scopes=["https://www.googleapis.com/auth/indexing"]
+                  )
+                  credentials.refresh(Request())
 
-          # 4. Google Indexing API ko URL bhejein
-          creds_dict = json.loads(os.environ["GOOGLE_INDEXING_KEY"])
-          credentials = service_account.Credentials.from_service_account_info(
-              creds_dict,
-              scopes=["https://www.googleapis.com/auth/indexing"]
-          )
-          credentials.refresh(Request())
+                  headers = {
+                      "Authorization": f"Bearer {credentials.token}",
+                      "Content-Type": "application/json"
+                  }
 
-          headers = {
-              "Authorization": f"Bearer {credentials.token}",
-              "Content-Type": "application/json"
-          }
-
-          for f in changed_files:
-              page_url = f"{site_url}/" if f == "index.html" else f"{site_url}/{urllib.parse.quote(f)}"
-              res = requests.post(
-                  "https://indexing.googleapis.com/v3/urlNotifications:publish",
-                  headers=headers,
-                  json={"url": page_url, "type": "URL_UPDATED"}
-              )
-              print(f"Submitted: {page_url} | Status: {res.status_code}")
+                  for f in changed_files[:200]:
+                      page_url = f"{site_url}/" if f == "index.html" else f"{site_url}/{urllib.parse.quote(f, safe='/')}"
+                      res = requests.post(
+                          "https://indexing.googleapis.com/v3/urlNotifications:publish",
+                          headers=headers,
+                          json={"url": page_url, "type": "URL_UPDATED"}
+                      )
+                      print(f"Submitted: {page_url} | Status: {res.status_code}")
+              except Exception as e:
+                  print(f"Indexing API skipped: {e}")
           EOF
 
-      - name: Commit updated sitemap.xml
+      - name: Commit updated sitemap.xml and all-pages.html
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          git diff --staged --quiet || git commit -m "Auto-update sitemap.xml [skip ci]"
+          git add sitemap.xml all-pages.html
+          git diff --staged --quiet || git commit -m "Auto-update sitemap.xml and all-pages.html [skip ci]"
           git push
