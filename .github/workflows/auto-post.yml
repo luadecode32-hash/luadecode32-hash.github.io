@@ -1,0 +1,152 @@
+name: Auto AI Post & Sitemap Update
+
+on:
+  schedule:
+    - cron: '30 3 * * *' # Roz subah 9:00 AM IST par chalega
+  workflow_dispatch:      # Manual test button ke liye
+
+permissions:
+  contents: write
+
+jobs:
+  auto-post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate AI Posts & Update Sitemap
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SITE_URL: "https://www.androidmodsarena.indevs.in"
+        run: |
+          python - << 'EOF'
+          import os, re, glob, time, urllib.parse
+          import requests
+
+          api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+          site_url = os.environ["SITE_URL"].rstrip("/")
+          topics_file = "topics.txt"
+
+          # 1. topics.txt se agle 2 topics padhein
+          if os.path.exists(topics_file) and api_key:
+              with open(topics_file, "r", encoding="utf-8") as f:
+                  all_topics = [line.strip() for line in f if line.strip()]
+
+              batch = all_topics[:2]
+              posted_count = 0
+
+              for topic in batch:
+                  slug = re.sub(r'[^a-z0-9]+', '-', topic.lower()).strip('-') + ".html"
+                  if os.path.exists(slug):
+                      slug = slug.replace(".html", "-guide.html")
+
+                  prompt = f"""Write a complete, clean, responsive HTML5 webpage in English about: "{topic}".
+          Website Name: AndroidModsArena
+          Requirements:
+          - Return ONLY raw valid HTML code starting with <!DOCTYPE html> and ending with </html>. Do NOT wrap in markdown code blocks.
+          - Include SEO <title> and <meta name="description"> in <head>.
+          - Add simple modern CSS inside <style> (clean dark/light card layout, mobile-friendly, max-width 900px, readable fonts).
+          - Top navigation bar with links: <a href="index.html">Home</a> and <a href="all-pages.html">All Pages</a>.
+          - Detailed, helpful 600+ word article with H1, H2 subheadings, bullet points, a summary table, and a 3-question FAQ section.
+          """
+
+                  url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
+                  headers = {
+                      "Content-Type": "application/json",
+                      "x-goog-api-key": api_key
+                  }
+                  payload = {
+                      "contents": [{"parts": [{"text": prompt}]}]
+                  }
+
+                  try:
+                      res = requests.post(url, headers=headers, json=payload, timeout=60)
+                      if res.status_code == 200:
+                          data = res.json()
+                          html_code = data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                          html_code = re.sub(r'^```html\s*', '', html_code, flags=re.IGNORECASE)
+                          html_code = re.sub(r'^```\s*', '', html_code)
+                          html_code = re.sub(r'\s*```$', '', html_code).strip()
+
+                          if "<html" in html_code.lower() and len(html_code) > 500:
+                              with open(slug, "w", encoding="utf-8") as out:
+                                  out.write(html_code)
+                              print(f"Created: {slug}")
+                              posted_count += 1
+                          else:
+                              print(f"Invalid HTML output for: {topic}")
+                      else:
+                          print(f"API Error {res.status_code}: {res.text}")
+                  except Exception as e:
+                      print(f"Request failed for {topic}: {e}")
+
+                  time.sleep(5)
+
+              # Jo topics post ho gaye unhe topics.txt se hata dein
+              if posted_count > 0:
+                  remaining = all_topics[posted_count:]
+                  with open(topics_file, "w", encoding="utf-8") as f:
+                      f.write("\n".join(remaining) + ("\n" if remaining else ""))
+
+          # 2. sitemap.xml aur all-pages.html ko auto-update karein
+          html_files = sorted([
+              f.replace("\\", "/") for f in glob.glob("**/*.html", recursive=True)
+              if not os.path.basename(f).startswith("google")
+              and f != "all-pages.html"
+          ])
+
+          urls = [f"{site_url}/", f"{site_url}/all-pages.html"]
+          link_items = []
+
+          for f in html_files:
+              if f != "index.html":
+                  encoded = urllib.parse.quote(f, safe="/")
+                  urls.append(f"{site_url}/{encoded}")
+                  title = os.path.splitext(os.path.basename(f))[0].replace("-", " ").replace("_", " ").title()
+                  link_items.append(f'    <li><a href="{encoded}">{title}</a></li>')
+
+          sitemap_lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="[http://www.sitemaps.org/schemas/sitemap/0.9](http://www.sitemaps.org/schemas/sitemap/0.9)">']
+          for u in urls:
+              sitemap_lines.append(f"  <url>\n    <loc>{u}</loc>\n  </url>")
+          sitemap_lines.append("</urlset>\n")
+
+          with open("sitemap.xml", "w", encoding="utf-8") as sm:
+              sm.write("\n".join(sitemap_lines))
+
+          all_pages_html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>All Pages - Android Mods Arena</title>
+          </head>
+          <body>
+            <p><a href="index.html">← Back to Home</a></p>
+            <h1>All Pages ({len(link_items)})</h1>
+            <ul>
+          {chr(10).join(link_items)}
+            </ul>
+          </body>
+          </html>
+          """
+
+          with open("all-pages.html", "w", encoding="utf-8") as ap:
+              ap.write(all_pages_html)
+          EOF
+
+      - name: Commit & Push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || git commit -m "Auto-publish AI posts & update sitemap [skip ci]"
+          git push
