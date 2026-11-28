@@ -1,0 +1,127 @@
+name: Auto Internal Linking
+
+on:
+  workflow_run:
+    workflows: ["Auto AI Post, Sitemap & Telegram", "Auto AI Post & Sitemap Update"]
+    types: [completed]
+  push:
+    branches: [ main, master ]
+    paths:
+      - '**.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  add-internal-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Update Related Links on All Pages
+        run: |
+          python - << 'EOF'
+          import os, re, glob, urllib.parse
+
+          html_files = sorted([
+              f.replace("\\", "/") for f in glob.glob("**/*.html", recursive=True)
+              if not os.path.basename(f).startswith("google")
+              and f not in ("index.html", "all-pages.html")
+          ])
+
+          stop_words = {"html", "guide", "best", "top", "and", "for", "the", "with", "tutorial", "data", "gov"}
+
+          def get_keywords(filepath):
+              name = os.path.splitext(os.path.basename(filepath))[0].lower()
+              words = re.split(r'[^a-z0-9]+', urllib.parse.unquote(name))
+              return {w for w in words if len(w) > 2 and w not in stop_words}
+
+          def clean_title(filepath):
+              raw = urllib.parse.unquote(os.path.splitext(os.path.basename(filepath))[0])
+              return raw.replace("-", " ").replace("_", " ").title()
+
+          keywords_map = {p: get_keywords(p) for p in html_files}
+          latest_pages = list(reversed(html_files[-10:]))
+
+          for page in html_files:
+              try:
+                  with open(page, "r", encoding="utf-8", errors="ignore") as pf:
+                      original_html = pf.read()
+
+                  cleaned_html = re.sub(
+                      r'\s*<!-- AUTO-RELATED-START -->.*?<!-- AUTO-RELATED-END -->\s*',
+                      '\n',
+                      original_html,
+                      flags=re.DOTALL
+                  )
+
+                  page_kw = keywords_map[page]
+                  scored = []
+                  for other in html_files:
+                      if other != page:
+                          overlap = len(page_kw & keywords_map[other])
+                          scored.append((overlap, other))
+
+                  scored.sort(key=lambda x: (-x[0], x[1]))
+                  selected = [p for score, p in scored if score > 0][:3]
+
+                  for lp in latest_pages:
+                      if lp != page and lp not in selected:
+                          selected.append(lp)
+                      if len(selected) >= 5:
+                          break
+
+                  for _, p in scored:
+                      if p not in selected:
+                          selected.append(p)
+                      if len(selected) >= 5:
+                          break
+
+                  if not selected:
+                      continue
+
+                  li_tags = "\n".join([
+                      f'    <li><a href="/{urllib.parse.quote(p, safe="/")}" style="color:#38bdf8;text-decoration:none;">{clean_title(p)}</a></li>'
+                      for p in selected
+                  ])
+
+                  related_block = f"""<!-- AUTO-RELATED-START -->
+          <div style="max-width:900px;margin:32px auto;padding:20px;border:1px solid rgba(148,163,184,0.3);border-radius:12px;background:rgba(148,163,184,0.08);font-family:system-ui,-apple-system,sans-serif;">
+            <h3 style="margin:0 0 12px 0;font-size:18px;">Related Guides &amp; Resources</h3>
+            <ul style="margin:0;padding-left:20px;line-height:1.9;">
+          {li_tags}
+            </ul>
+          </div>
+          <!-- AUTO-RELATED-END -->"""
+
+                  if re.search(r'</body>', cleaned_html, flags=re.IGNORECASE):
+                      updated_html = re.sub(
+                          r'</body>',
+                          related_block + '\n</body>',
+                          cleaned_html,
+                          count=1,
+                          flags=re.IGNORECASE
+                      )
+                  else:
+                      updated_html = cleaned_html + "\n" + related_block
+
+                  if updated_html != original_html:
+                      with open(page, "w", encoding="utf-8") as pf:
+                          pf.write(updated_html)
+              except Exception as e:
+                  print(f"Error on {page}: {e}")
+          EOF
+
+      - name: Commit & Push internal links
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git diff --staged --quiet || (git commit -m "Auto-update internal links [skip ci]" && git pull --rebase && git push)
